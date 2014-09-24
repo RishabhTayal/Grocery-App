@@ -17,6 +17,7 @@
 		0690D63119D33D8B007964A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0690D62F19D33D8B007964A7 /* LaunchScreen.xib */; };
 		0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D64719D33F37007964A7 /* GRCartViewController.m */; };
 		0690D64B19D33FF8007964A7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0690D64A19D33FF8007964A7 /* Crashlytics.framework */; };
+		0690D64E19D349A4007964A7 /* GRMyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		0690D64619D33F37007964A7 /* GRCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRCartViewController.h; sourceTree = "<group>"; };
 		0690D64719D33F37007964A7 /* GRCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRCartViewController.m; sourceTree = "<group>"; };
 		0690D64A19D33FF8007964A7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		0690D64C19D349A4007964A7 /* GRMyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMyAccountViewController.h; sourceTree = "<group>"; };
+		0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMyAccountViewController.m; sourceTree = "<group>"; };
 		BE40B0DD46FC454995F84304 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E66478CB849448F78ED43114 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +84,8 @@
 				0690D62819D33D8B007964A7 /* GRSearchViewController.m */,
 				0690D64619D33F37007964A7 /* GRCartViewController.h */,
 				0690D64719D33F37007964A7 /* GRCartViewController.m */,
+				0690D64C19D349A4007964A7 /* GRMyAccountViewController.h */,
+				0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
 				0690D62D19D33D8B007964A7 /* Images.xcassets */,
 				0690D62F19D33D8B007964A7 /* LaunchScreen.xib */,
@@ -229,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0690D62919D33D8B007964A7 /* GRSearchViewController.m in Sources */,
+				0690D64E19D349A4007964A7 /* GRMyAccountViewController.m in Sources */,
 				0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */,
 				0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */,
 				0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */,
@@ -357,8 +363,8 @@
 			baseConfigurationReference = BE40B0DD46FC454995F84304 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -366,7 +372,7 @@
 				INFOPLIST_FILE = "Grocery App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "973f3b48-2918-4097-91ad-d5942dd40e78";
 			};
 			name = Release;
 		};

@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="463" y="-266"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController restorationIdentifier="GRSearchViewController" storyboardIdentifier="GRSearchViewController" id="8rJ-Kc-sve" customClass="GRSearchViewController" sceneMemberID="viewController">
@@ -76,7 +76,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="D09-IG-1yP"/>
                     <connections>
                         <outlet property="tableView" destination="Kxh-g8-Kap" id="MEl-BH-5w4"/>
@@ -122,6 +121,46 @@
             </objects>
             <point key="canvasLocation" x="455" y="1025"/>
         </scene>
+        <!--My Account-->
+        <scene sceneID="pMd-jK-hRm">
+            <objects>
+                <viewController restorationIdentifier="GRMyAccountViewController" storyboardIdentifier="GRMyAccountViewController" id="8SB-Nh-Rzd" customClass="GRMyAccountViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uet-Ds-IZI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yqc-DV-kT6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yFb-02-ar3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-Wd-zNY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rcp-Ry-tlf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rcp-Ry-tlf" id="rO2-Qx-8wE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8SB-Nh-Rzd" id="jKy-Sa-yWF"/>
+                                    <outlet property="delegate" destination="8SB-Nh-Rzd" id="EpP-3F-32e"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Account" id="5Bj-Wf-1UE"/>
+                    <connections>
+                        <outlet property="tableView" destination="wR2-Wd-zNY" id="VSy-04-izu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gsi-C6-J8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="1671"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -135,8 +174,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="O5z-Ux-cwg" kind="relationship" relationship="viewControllers" id="nns-Rc-Y84"/>
                         <segue destination="IA1-Ws-Adj" kind="relationship" relationship="viewControllers" id="rxI-be-OaR"/>
+                        <segue destination="O5z-Ux-cwg" kind="relationship" relationship="viewControllers" id="nns-Rc-Y84"/>
+                        <segue destination="8SB-Nh-Rzd" kind="relationship" relationship="viewControllers" id="j9M-qR-Pn3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -146,6 +186,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
