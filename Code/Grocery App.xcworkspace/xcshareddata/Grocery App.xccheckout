@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>562EA36C-2B3C-4E19-90B3-3BDECF02FE44</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Grocery App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>86B28519BB7C8C092F619B3AC9B2BF722FAAE3DC</key>
+		<string>https://github.com/rishabhtayal/Grocery-App.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Code/Grocery App.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>86B28519BB7C8C092F619B3AC9B2BF722FAAE3DC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rishabhtayal/Grocery-App.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>86B28519BB7C8C092F619B3AC9B2BF722FAAE3DC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>86B28519BB7C8C092F619B3AC9B2BF722FAAE3DC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Grocery%20App</string>
+		</dict>
+	</array>
+</dict>
+</plist>

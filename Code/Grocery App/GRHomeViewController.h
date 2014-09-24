@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  Grocery App
 //
 //  Created by Rishabh Tayal on 9/24/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface GRHomeViewController : UIViewController
 
 
 @end

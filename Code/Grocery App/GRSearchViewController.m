@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Appikon Mobile. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "GRSearchViewController.h"
 
-@interface SecondViewController ()
+@interface GRSearchViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation GRSearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

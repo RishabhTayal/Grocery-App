@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Appikon Mobile. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "GRHomeViewController.h"
 
-@interface FirstViewController ()
+@interface GRHomeViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation GRHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
