@@ -17,6 +17,7 @@
 		06B2DAA519D33AF0006667D2 /* GRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B2DAA419D33AF0006667D2 /* GRFirstViewController.m */; };
 		06B2DAA819D33AF0006667D2 /* GRSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B2DAA719D33AF0006667D2 /* GRSecondViewController.m */; };
 		06B2DAAA19D33AF0006667D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B2DAA919D33AF0006667D2 /* Images.xcassets */; };
+		46ECDF5681AD4423BF138703 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B19416C08FA54E8F9F4ABE9F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		06B2DAA719D33AF0006667D2 /* GRSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRSecondViewController.m; sourceTree = "<group>"; };
 		06B2DAA919D33AF0006667D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06B2DAB019D33AF0006667D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B19416C08FA54E8F9F4ABE9F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F379D236171C427DB45F405D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 				06B2DA9119D33AEF006667D2 /* CoreGraphics.framework in Frameworks */,
 				06B2DA9319D33AEF006667D2 /* UIKit.framework in Frameworks */,
 				06B2DA8F19D33AEF006667D2 /* Foundation.framework in Frameworks */,
+				46ECDF5681AD4423BF138703 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 				06B2DA9419D33AEF006667D2 /* Grocery App */,
 				06B2DA8D19D33AEF006667D2 /* Frameworks */,
 				06B2DA8C19D33AEF006667D2 /* Products */,
+				F379D236171C427DB45F405D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +82,7 @@
 				06B2DA9019D33AEF006667D2 /* CoreGraphics.framework */,
 				06B2DA9219D33AEF006667D2 /* UIKit.framework */,
 				06B2DAB019D33AF0006667D2 /* XCTest.framework */,
+				B19416C08FA54E8F9F4ABE9F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06B2DAC019D33AF0006667D2 /* Build configuration list for PBXNativeTarget "Grocery App" */;
 			buildPhases = (
+				EA50DE49A9084B0F923F1EE7 /* Check Pods Manifest.lock */,
 				06B2DA8719D33AEF006667D2 /* Sources */,
 				06B2DA8819D33AEF006667D2 /* Frameworks */,
 				06B2DA8919D33AEF006667D2 /* Resources */,
+				D4478D3506E943619875EEDD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +176,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4478D3506E943619875EEDD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA50DE49A9084B0F923F1EE7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06B2DA8719D33AEF006667D2 /* Sources */ = {
@@ -275,12 +316,14 @@
 		};
 		06B2DAC119D33AF0006667D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F379D236171C427DB45F405D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Grocery App/Grocery App-Prefix.pch";
 				INFOPLIST_FILE = "Grocery App/Grocery App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -288,12 +331,14 @@
 		};
 		06B2DAC219D33AF0006667D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F379D236171C427DB45F405D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Grocery App/Grocery App-Prefix.pch";
 				INFOPLIST_FILE = "Grocery App/Grocery App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
