@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06B2DA8A19D33AEF006667D2"
+               BlueprintIdentifier = "0690D5E919D33D17007964A7"
                BuildableName = "Grocery App.app"
                BlueprintName = "Grocery App"
+               ReferencedContainer = "container:Grocery App.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0690D60019D33D17007964A7"
+               BuildableName = "Grocery AppTests.xctest"
+               BlueprintName = "Grocery AppTests"
                ReferencedContainer = "container:Grocery App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06B2DAAE19D33AF0006667D2"
+               BlueprintIdentifier = "0690D60019D33D17007964A7"
                BuildableName = "Grocery AppTests.xctest"
                BlueprintName = "Grocery AppTests"
                ReferencedContainer = "container:Grocery App.xcodeproj">
@@ -42,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06B2DA8A19D33AEF006667D2"
+            BlueprintIdentifier = "0690D5E919D33D17007964A7"
             BuildableName = "Grocery App.app"
             BlueprintName = "Grocery App"
             ReferencedContainer = "container:Grocery App.xcodeproj">
@@ -61,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06B2DA8A19D33AEF006667D2"
+            BlueprintIdentifier = "0690D5E919D33D17007964A7"
             BuildableName = "Grocery App.app"
             BlueprintName = "Grocery App"
             ReferencedContainer = "container:Grocery App.xcodeproj">
@@ -79,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06B2DA8A19D33AEF006667D2"
+            BlueprintIdentifier = "0690D5E919D33D17007964A7"
             BuildableName = "Grocery App.app"
             BlueprintName = "Grocery App"
             ReferencedContainer = "container:Grocery App.xcodeproj">

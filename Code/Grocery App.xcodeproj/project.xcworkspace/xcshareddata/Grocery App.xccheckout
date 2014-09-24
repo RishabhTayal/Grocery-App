@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>87770FBA-E189-4873-912A-96F5D63E0DD3</string>
+	<string>7158B6F3-81AE-4613-BD6E-DD338408C683</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Grocery App</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/rishabhtayal/Grocery-App.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Code/Grocery App.xcodeproj</string>
+	<string>Code/Grocery App/Grocery App.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>86B28519BB7C8C092F619B3AC9B2BF722FAAE3DC</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/rishabhtayal/Grocery-App.git</string>
