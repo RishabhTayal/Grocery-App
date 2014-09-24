@@ -372,7 +372,7 @@
 				INFOPLIST_FILE = "Grocery App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "973f3b48-2918-4097-91ad-d5942dd40e78";
+				PROVISIONING_PROFILE = "199bee0e-39d9-4878-9371-9f86f147bec0";
 			};
 			name = Release;
 		};

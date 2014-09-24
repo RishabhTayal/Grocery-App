@@ -59,19 +59,24 @@
 {
     switch (indexPath.row) {
         case 0:
-            cell.textLabel.text = @"a";
+            cell.textLabel.text = @"Order History";
+            cell.imageView.image = [UIImage imageNamed:@"history_icn"];
             break;
         case 1:
-            cell.textLabel.text = @"a";
+            cell.textLabel.text = @"Shipping";
+            cell.imageView.image = [UIImage imageNamed:@"shipping_icn"];
             break;
         case 2:
-            cell.textLabel.text = @"a";
+            cell.textLabel.text = @"Payment info";
+            cell.imageView.image = [UIImage imageNamed:@"billing_icn"];
             break;
         case 3:
-            cell.textLabel.text = @"a";
+            cell.textLabel.text = @"Favorites";
+            cell.imageView.image = [UIImage imageNamed:@"billing_icn"];
             break;
         default:
-            cell.textLabel.text = @"a";
+            cell.textLabel.text = @"Account Info";
+            cell.imageView.image = [UIImage imageNamed:@"account_icn"];
             break;
     }
 }

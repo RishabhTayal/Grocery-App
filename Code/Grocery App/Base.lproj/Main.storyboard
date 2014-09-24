@@ -122,6 +122,23 @@
             <point key="canvasLocation" x="455" y="1025"/>
         </scene>
         <!--My Account-->
+        <scene sceneID="U60-JM-aCe">
+            <objects>
+                <navigationController id="V70-Ai-oUa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Account" id="pVW-Cx-gwk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oeE-5i-CcB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8SB-Nh-Rzd" kind="relationship" relationship="rootViewController" id="tcw-58-bkw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNg-GY-mgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="1664"/>
+        </scene>
+        <!--My Account-->
         <scene sceneID="pMd-jK-hRm">
             <objects>
                 <viewController restorationIdentifier="GRMyAccountViewController" storyboardIdentifier="GRMyAccountViewController" id="8SB-Nh-Rzd" customClass="GRMyAccountViewController" sceneMemberID="viewController">
@@ -137,7 +154,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rcp-Ry-tlf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="rcp-Ry-tlf">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rcp-Ry-tlf" id="rO2-Qx-8wE">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -153,13 +170,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Account" id="5Bj-Wf-1UE"/>
+                    <navigationItem key="navigationItem" id="ph8-Fy-b7f"/>
                     <connections>
                         <outlet property="tableView" destination="wR2-Wd-zNY" id="VSy-04-izu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsi-C6-J8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="1671"/>
+            <point key="canvasLocation" x="888" y="1664"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -176,7 +194,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="IA1-Ws-Adj" kind="relationship" relationship="viewControllers" id="rxI-be-OaR"/>
                         <segue destination="O5z-Ux-cwg" kind="relationship" relationship="viewControllers" id="nns-Rc-Y84"/>
-                        <segue destination="8SB-Nh-Rzd" kind="relationship" relationship="viewControllers" id="j9M-qR-Pn3"/>
+                        <segue destination="V70-Ai-oUa" kind="relationship" relationship="viewControllers" id="vYU-05-Cfp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
