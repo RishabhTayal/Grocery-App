@@ -17,22 +17,7 @@
 		06B2DAA519D33AF0006667D2 /* GRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B2DAA419D33AF0006667D2 /* GRFirstViewController.m */; };
 		06B2DAA819D33AF0006667D2 /* GRSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B2DAA719D33AF0006667D2 /* GRSecondViewController.m */; };
 		06B2DAAA19D33AF0006667D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B2DAA919D33AF0006667D2 /* Images.xcassets */; };
-		06B2DAB119D33AF0006667D2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B2DAB019D33AF0006667D2 /* XCTest.framework */; };
-		06B2DAB219D33AF0006667D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B2DA8E19D33AEF006667D2 /* Foundation.framework */; };
-		06B2DAB319D33AF0006667D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B2DA9219D33AEF006667D2 /* UIKit.framework */; };
-		06B2DABB19D33AF0006667D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06B2DAB919D33AF0006667D2 /* InfoPlist.strings */; };
-		06B2DABD19D33AF0006667D2 /* Grocery_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B2DABC19D33AF0006667D2 /* Grocery_AppTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		06B2DAB419D33AF0006667D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 06B2DA8319D33AEF006667D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 06B2DA8A19D33AEF006667D2;
-			remoteInfo = "Grocery App";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06B2DA8B19D33AEF006667D2 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,11 +36,7 @@
 		06B2DAA619D33AF0006667D2 /* GRSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRSecondViewController.h; sourceTree = "<group>"; };
 		06B2DAA719D33AF0006667D2 /* GRSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRSecondViewController.m; sourceTree = "<group>"; };
 		06B2DAA919D33AF0006667D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		06B2DAAF19D33AF0006667D2 /* Grocery AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B2DAB019D33AF0006667D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		06B2DAB819D33AF0006667D2 /* Grocery AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grocery AppTests-Info.plist"; sourceTree = "<group>"; };
-		06B2DABA19D33AF0006667D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		06B2DABC19D33AF0006667D2 /* Grocery_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Grocery_AppTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,16 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		06B2DAAC19D33AF0006667D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06B2DAB119D33AF0006667D2 /* XCTest.framework in Frameworks */,
-				06B2DAB319D33AF0006667D2 /* UIKit.framework in Frameworks */,
-				06B2DAB219D33AF0006667D2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				06B2DA9419D33AEF006667D2 /* Grocery App */,
-				06B2DAB619D33AF0006667D2 /* Grocery AppTests */,
 				06B2DA8D19D33AEF006667D2 /* Frameworks */,
 				06B2DA8C19D33AEF006667D2 /* Products */,
 			);
@@ -96,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				06B2DA8B19D33AEF006667D2 /* Grocery App.app */,
-				06B2DAAF19D33AF0006667D2 /* Grocery AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,24 +108,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		06B2DAB619D33AF0006667D2 /* Grocery AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				06B2DABC19D33AF0006667D2 /* Grocery_AppTests.m */,
-				06B2DAB719D33AF0006667D2 /* Supporting Files */,
-			);
-			path = "Grocery AppTests";
-			sourceTree = "<group>";
-		};
-		06B2DAB719D33AF0006667D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				06B2DAB819D33AF0006667D2 /* Grocery AppTests-Info.plist */,
-				06B2DAB919D33AF0006667D2 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,24 +128,6 @@
 			productReference = 06B2DA8B19D33AEF006667D2 /* Grocery App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		06B2DAAE19D33AF0006667D2 /* Grocery AppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 06B2DAC319D33AF0006667D2 /* Build configuration list for PBXNativeTarget "Grocery AppTests" */;
-			buildPhases = (
-				06B2DAAB19D33AF0006667D2 /* Sources */,
-				06B2DAAC19D33AF0006667D2 /* Frameworks */,
-				06B2DAAD19D33AF0006667D2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				06B2DAB519D33AF0006667D2 /* PBXTargetDependency */,
-			);
-			name = "Grocery AppTests";
-			productName = "Grocery AppTests";
-			productReference = 06B2DAAF19D33AF0006667D2 /* Grocery AppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,11 +137,6 @@
 				CLASSPREFIX = GR;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Appikon Mobile";
-				TargetAttributes = {
-					06B2DAAE19D33AF0006667D2 = {
-						TestTargetID = 06B2DA8A19D33AEF006667D2;
-					};
-				};
 			};
 			buildConfigurationList = 06B2DA8619D33AEF006667D2 /* Build configuration list for PBXProject "Grocery App" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,7 +152,6 @@
 			projectRoot = "";
 			targets = (
 				06B2DA8A19D33AEF006667D2 /* Grocery App */,
-				06B2DAAE19D33AF0006667D2 /* Grocery AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,14 +164,6 @@
 				06B2DAAA19D33AF0006667D2 /* Images.xcassets in Resources */,
 				06B2DA9919D33AF0006667D2 /* InfoPlist.strings in Resources */,
 				06B2DAA219D33AF0006667D2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06B2DAAD19D33AF0006667D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06B2DABB19D33AF0006667D2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,23 +181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		06B2DAAB19D33AF0006667D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06B2DABD19D33AF0006667D2 /* Grocery_AppTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		06B2DAB519D33AF0006667D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 06B2DA8A19D33AEF006667D2 /* Grocery App */;
-			targetProxy = 06B2DAB419D33AF0006667D2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		06B2DA9719D33AF0006667D2 /* InfoPlist.strings */ = {
@@ -295,14 +198,6 @@
 				06B2DAA119D33AF0006667D2 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		06B2DAB919D33AF0006667D2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				06B2DABA19D33AF0006667D2 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -404,46 +299,6 @@
 			};
 			name = Release;
 		};
-		06B2DAC419D33AF0006667D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Grocery App.app/Grocery App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Grocery App/Grocery App-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Grocery AppTests/Grocery AppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		06B2DAC519D33AF0006667D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Grocery App.app/Grocery App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Grocery App/Grocery App-Prefix.pch";
-				INFOPLIST_FILE = "Grocery AppTests/Grocery AppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -463,14 +318,7 @@
 				06B2DAC219D33AF0006667D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		06B2DAC319D33AF0006667D2 /* Build configuration list for PBXNativeTarget "Grocery AppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				06B2DAC419D33AF0006667D2 /* Debug */,
-				06B2DAC519D33AF0006667D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
