@@ -15,6 +15,7 @@
 		0690D62C19D33D8B007964A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0690D62A19D33D8B007964A7 /* Main.storyboard */; };
 		0690D62E19D33D8B007964A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0690D62D19D33D8B007964A7 /* Images.xcassets */; };
 		0690D63119D33D8B007964A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0690D62F19D33D8B007964A7 /* LaunchScreen.xib */; };
+		0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D64719D33F37007964A7 /* GRCartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		0690D62B19D33D8B007964A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0690D62D19D33D8B007964A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0690D63019D33D8B007964A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0690D64619D33F37007964A7 /* GRCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRCartViewController.h; sourceTree = "<group>"; };
+		0690D64719D33F37007964A7 /* GRCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRCartViewController.m; sourceTree = "<group>"; };
 		BE40B0DD46FC454995F84304 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E66478CB849448F78ED43114 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +76,8 @@
 				0690D62519D33D8B007964A7 /* GRHomeViewController.m */,
 				0690D62719D33D8B007964A7 /* GRSearchViewController.h */,
 				0690D62819D33D8B007964A7 /* GRSearchViewController.m */,
+				0690D64619D33F37007964A7 /* GRCartViewController.h */,
+				0690D64719D33F37007964A7 /* GRCartViewController.m */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
 				0690D62D19D33D8B007964A7 /* Images.xcassets */,
 				0690D62F19D33D8B007964A7 /* LaunchScreen.xib */,
@@ -207,6 +212,7 @@
 			files = (
 				0690D62919D33D8B007964A7 /* GRSearchViewController.m in Sources */,
 				0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */,
+				0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */,
 				0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */,
 				0690D62019D33D8B007964A7 /* main.m in Sources */,
 			);

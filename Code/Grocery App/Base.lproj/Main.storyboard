@@ -84,6 +84,25 @@
             </objects>
             <point key="canvasLocation" x="463" y="384"/>
         </scene>
+        <!--Cart-->
+        <scene sceneID="Njc-OK-uf5">
+            <objects>
+                <viewController restorationIdentifier="GRCartViewControllers" storyboardIdentifier="GRCartViewController" id="O5z-Ux-cwg" customClass="GRCartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N72-W0-dEU"/>
+                        <viewControllerLayoutGuide type="bottom" id="aPt-md-h8c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H1u-uC-Zlv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cart" id="CNg-YQ-tNC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPg-sS-yDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="1025"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -98,6 +117,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="O5z-Ux-cwg" kind="relationship" relationship="viewControllers" id="nns-Rc-Y84"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
