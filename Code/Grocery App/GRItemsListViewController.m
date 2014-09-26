@@ -32,6 +32,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -53,7 +60,7 @@
 
 - (void)configureCell:(GRItemTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.productIV.image = [UIImage imageNamed:@"account_icn"];
+    cell.productIV.image = [UIImage imageNamed:@"sev"];
     cell.productName.text = @"Sev";
     cell.priceLabel.text = @"$4.99";
 }
