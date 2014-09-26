@@ -8,6 +8,7 @@
 
 #import "GRItemDetailViewController.h"
 #import "Cart.h"
+#import "GRTabViewController.h"
 
 @interface GRItemDetailViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -43,11 +44,16 @@
 {
     Cart* cart = [Cart MR_createEntity];
     cart.title = _titleLabel.text;
+    
+    cart.quantity = [NSNumber numberWithDouble:self.quantityStepper.value];
 //    cart.desc =
 //    cart.q
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
     }];
+    
+    GRTabViewController* tabBar = (GRTabViewController*)self.tabBarController;
+    [tabBar addedToCart];    
 }
 
 -(IBAction)stepperChanged:(UIStepper*)sender

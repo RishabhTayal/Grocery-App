@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * price;
 @property (nonatomic, retain) NSString * desc;
+@property (nonatomic, assign) NSNumber * quantity;
 
 @end

@@ -11,6 +11,7 @@
 #import <UITableView-NXEmptyView/UITableView+NXEmptyView.h>
 #import "GRCartItemTableViewCell.h"
 #import "GRCheckoutViewController.h"
+#import "GRTabViewController.h"
 
 @interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -93,13 +94,17 @@
     
     cell.itemImageView.image = [UIImage imageNamed:@"sev"];
     cell.itemNameLabel.text = item.title;
+    cell.quantityLabel.text = [NSString stringWithFormat:@"%@", item.quantity];
 }
 
 #pragma mark - UITableView Edititing
 
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleDelete;
+    if (self.tableView.editing) {
+        return UITableViewCellEditingStyleDelete;
+    }
+    return UITableViewCellEditingStyleNone;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -114,6 +119,8 @@
         
         [_datasource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [((GRTabViewController*)self.tabBarController) removeFromCart];
         
         if (_datasource.count == 0) {
             self.navigationItem.leftBarButtonItem = nil;

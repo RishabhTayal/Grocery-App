@@ -14,5 +14,6 @@
 @dynamic title;
 @dynamic price;
 @dynamic desc;
+@dynamic quantity;
 
 @end

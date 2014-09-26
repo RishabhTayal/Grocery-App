@@ -91,7 +91,8 @@
             break;
         case 4:
         {
-            GRLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"GRLoginViewController"];
+            GRLoginViewController* loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRLoginViewController"];
+            loginVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissLoginView:)];
             [self presentViewController:[[UINavigationController alloc] initWithRootViewController:loginVC] animated:YES completion:nil];
         }
             break;
@@ -99,6 +100,11 @@
         default:
             break;
     }
+}
+
+-(void)dismissLoginView:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - CardIO Delegate Methods
