@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" id="4jp-sb-yBu">
+                    <navigationItem key="navigationItem" title="Home" id="4jp-sb-yBu">
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="A0w-jB-x09">
                             <connections>
                                 <action selector="cartClicked:" destination="9pv-A4-QxB" id="Rds-dg-Yn5"/>
@@ -29,33 +30,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832" y="-310"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="91R-Bn-FYz">
-            <objects>
-                <tableViewController id="s4x-7Z-izQ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hcm-lb-B2k">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="odv-I0-h8F">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="odv-I0-h8F" id="kFi-v6-dFv">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="s4x-7Z-izQ" id="nhB-fS-xhv"/>
-                            <outlet property="delegate" destination="s4x-7Z-izQ" id="LW4-9d-NN2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="F8T-Vs-dDg"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0cD-9g-zot" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1817" y="-605"/>
         </scene>
         <!--Home-->
         <scene sceneID="7zR-0P-XW7">
@@ -74,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="455" y="-310"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController restorationIdentifier="GRSearchViewController" storyboardIdentifier="GRSearchViewController" id="8rJ-Kc-sve" customClass="GRSearchViewController" sceneMemberID="viewController">
@@ -108,7 +82,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="D09-IG-1yP">
+                    <navigationItem key="navigationItem" title="Search" id="D09-IG-1yP">
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="90a-md-drX">
                             <connections>
                                 <action selector="cartButtonCliceked:" destination="8rJ-Kc-sve" id="ECa-NX-pW5"/>
@@ -304,7 +278,7 @@
         <scene sceneID="B7q-Zz-ca2">
             <objects>
                 <navigationController id="IA1-Ws-Adj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="GcF-hj-8hU"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="second" id="GcF-hj-8hU"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4gG-lA-u7W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -396,7 +370,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="first" id="CNg-YQ-tNC"/>
-                    <navigationItem key="navigationItem" id="Trp-5Z-32R">
+                    <navigationItem key="navigationItem" title="Cart" id="Trp-5Z-32R">
                         <barButtonItem key="rightBarButtonItem" title="Checkout" id="ul5-Jn-bOj"/>
                     </navigationItem>
                     <connections>
@@ -430,7 +404,7 @@
         <scene sceneID="U60-JM-aCe">
             <objects>
                 <navigationController id="V70-Ai-oUa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Account" id="pVW-Cx-gwk"/>
+                    <tabBarItem key="tabBarItem" title="My Account" image="second" id="pVW-Cx-gwk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oeE-5i-CcB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -474,8 +448,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Account" id="5Bj-Wf-1UE"/>
-                    <navigationItem key="navigationItem" id="ph8-Fy-b7f"/>
+                    <tabBarItem key="tabBarItem" title="My Account" image="second" id="5Bj-Wf-1UE"/>
+                    <navigationItem key="navigationItem" title="My Account" id="ph8-Fy-b7f"/>
                     <connections>
                         <outlet property="tableView" destination="wR2-Wd-zNY" id="VSy-04-izu"/>
                     </connections>
@@ -509,5 +483,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>
