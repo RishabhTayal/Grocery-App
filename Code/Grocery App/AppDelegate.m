@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
 #import <PayPal-iOS-SDK/PayPalMobile.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -25,7 +26,21 @@
     
     [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentProduction: @"AXN8ThDXFkgG2A7V6YuTTShIRz_KTNxdWwG3xj32C1BatV6_x1jUwk8PxSK_", PayPalEnvironmentSandbox:@"ARbi8xAoZXv_X4OvTfovyvHvbO-frUBlowY_D5GU0VsmrV8NhDNYPBC30Zoa"}];
     
+    [Parse setApplicationId:@"sTY3mDitYI1kOD7JGC3cix44zTq2SeNHyVkukYtD" clientKey:@"rNaV7UkDdCzu4MvGczNIYVMwemuhuNBjr9uCVAry"];
+    
     return YES;
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [PFPush handlePush:userInfo];
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    PFInstallation* currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
