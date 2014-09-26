@@ -103,10 +103,18 @@
 		064F8F1719D5C47E00291398 /* Item Detail */ = {
 			isa = PBXGroup;
 			children = (
+				064F8F1E19D5CC7400291398 /* Cells */,
 				064F8F1819D5C4DF00291398 /* GRItemDetailViewController.h */,
 				064F8F1919D5C4DF00291398 /* GRItemDetailViewController.m */,
 			);
 			name = "Item Detail";
+			sourceTree = "<group>";
+		};
+		064F8F1E19D5CC7400291398 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		0690D61119D33D8B007964A7 = {

@@ -7,11 +7,10 @@
 //
 
 #import "GRItemDetailViewController.h"
-#import <APParallaxHeader/UIScrollView+APParallaxHeader.h>
 
 @interface GRItemDetailViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) IBOutlet UITableView* tableView;
+@property (nonatomic, strong) IBOutlet UIImageView* mainIV;
 
 @property (nonatomic, strong) NSMutableArray* datasource;
 
@@ -22,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView addParallaxWithImage:[UIImage imageNamed:@"sev"] andHeight:200];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addToCartClicked:)];
+    
+    self.mainIV.image = [UIImage imageNamed:@"sev"];
     // Do any additional setup after loading the view.
 }
 
@@ -31,28 +32,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(void)addToCartClicked:(id)sender
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    [self configureCell:cell forRowAtIndexPath:indexPath];
-    
-    return cell;
-}
-
-- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Added" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GRItemDetailViewController : UIViewController
+@interface GRItemDetailViewController : UITableViewController
 
 @end
