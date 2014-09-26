@@ -10,5 +10,6 @@
 #define Grocery_App_PrefixHeader_pch
 
 #import <CoreData+MagicalRecord.h>
+#import "Constants.h"
 
 #endif
