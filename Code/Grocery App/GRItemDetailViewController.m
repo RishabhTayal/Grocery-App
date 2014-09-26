@@ -11,8 +11,13 @@
 @interface GRItemDetailViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UIImageView* mainIV;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIStepper *quantityStepper;
+@property (strong, nonatomic) IBOutlet UILabel *quantityLabel;
 
 @property (nonatomic, strong) NSMutableArray* datasource;
+
+- (IBAction)stepperChanged:(UIStepper*)sender;
 
 @end
 
@@ -24,6 +29,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addToCartClicked:)];
     
     self.mainIV.image = [UIImage imageNamed:@"sev"];
+    self.titleLabel.text = @"Sev";
     // Do any additional setup after loading the view.
 }
 
@@ -34,8 +40,12 @@
 
 -(void)addToCartClicked:(id)sender
 {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Added" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
+    
+}
+
+-(IBAction)stepperChanged:(UIStepper*)sender
+{
+    _quantityLabel.text = [NSString stringWithFormat:@"%d", (int)sender.value];
 }
 
 @end

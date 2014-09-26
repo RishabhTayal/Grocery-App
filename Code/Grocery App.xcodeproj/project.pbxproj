@@ -117,6 +117,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		064F8F2219D5DC0400291398 /* My Account */ = {
+			isa = PBXGroup;
+			children = (
+				0690D64C19D349A4007964A7 /* GRMyAccountViewController.h */,
+				0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */,
+			);
+			name = "My Account";
+			sourceTree = "<group>";
+		};
 		0690D61119D33D8B007964A7 = {
 			isa = PBXGroup;
 			children = (
@@ -145,8 +154,7 @@
 				064F8F1119D5C29100291398 /* Search VC */,
 				0690D64619D33F37007964A7 /* GRCartViewController.h */,
 				0690D64719D33F37007964A7 /* GRCartViewController.m */,
-				0690D64C19D349A4007964A7 /* GRMyAccountViewController.h */,
-				0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */,
+				064F8F2219D5DC0400291398 /* My Account */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
 				0690D64F19D3580A007964A7 /* GRLoginViewController.h */,
 				0690D65019D3580A007964A7 /* GRLoginViewController.m */,
