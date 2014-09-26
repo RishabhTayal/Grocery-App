@@ -63,9 +63,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GRSearchViewController* searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRSearchViewController"];
-    searchVC.datasource = [NSMutableArray arrayWithObjects:@"Sub Cat 1", @"Sub Cat 2", @"Sub Cat 3", nil];
-    [self.navigationController pushViewController:searchVC animated:YES];
+//    GRSearchViewController* searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRSearchViewController"];
+//    searchVC.datasource = [NSMutableArray arrayWithObjects:@"Sub Cat 1", @"Sub Cat 2", @"Sub Cat 3", nil];
+//    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 @end

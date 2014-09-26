@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		002055CB8EB74432A1DA2A07 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E66478CB849448F78ED43114 /* libPods.a */; };
+		064F8F1019D5C17B00291398 /* GRItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F0F19D5C17B00291398 /* GRItemsListViewController.m */; };
+		064F8F1519D5C2B100291398 /* GRItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F1419D5C2B100291398 /* GRItemTableViewCell.m */; };
+		064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F1919D5C4DF00291398 /* GRItemDetailViewController.m */; };
 		0690D62019D33D8B007964A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D61F19D33D8B007964A7 /* main.m */; };
 		0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62219D33D8B007964A7 /* AppDelegate.m */; };
 		0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62519D33D8B007964A7 /* GRHomeViewController.m */; };
@@ -18,9 +21,18 @@
 		0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D64719D33F37007964A7 /* GRCartViewController.m */; };
 		0690D64B19D33FF8007964A7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0690D64A19D33FF8007964A7 /* Crashlytics.framework */; };
 		0690D64E19D349A4007964A7 /* GRMyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */; };
+		0690D65119D3580A007964A7 /* GRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D65019D3580A007964A7 /* GRLoginViewController.m */; };
+		0690D65519D35B0D007964A7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0690D65419D35B0D007964A7 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		064F8F0319D36FE200291398 /* Grocery App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Grocery App.entitlements"; sourceTree = "<group>"; };
+		064F8F0E19D5C17B00291398 /* GRItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRItemsListViewController.h; sourceTree = "<group>"; };
+		064F8F0F19D5C17B00291398 /* GRItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRItemsListViewController.m; sourceTree = "<group>"; };
+		064F8F1319D5C2B100291398 /* GRItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRItemTableViewCell.h; sourceTree = "<group>"; };
+		064F8F1419D5C2B100291398 /* GRItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRItemTableViewCell.m; sourceTree = "<group>"; };
+		064F8F1819D5C4DF00291398 /* GRItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRItemDetailViewController.h; sourceTree = "<group>"; };
+		064F8F1919D5C4DF00291398 /* GRItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRItemDetailViewController.m; sourceTree = "<group>"; };
 		0690D61A19D33D8B007964A7 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0690D61E19D33D8B007964A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0690D61F19D33D8B007964A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -38,6 +50,9 @@
 		0690D64A19D33FF8007964A7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0690D64C19D349A4007964A7 /* GRMyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMyAccountViewController.h; sourceTree = "<group>"; };
 		0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMyAccountViewController.m; sourceTree = "<group>"; };
+		0690D64F19D3580A007964A7 /* GRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLoginViewController.h; sourceTree = "<group>"; };
+		0690D65019D3580A007964A7 /* GRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLoginViewController.m; sourceTree = "<group>"; };
+		0690D65419D35B0D007964A7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BE40B0DD46FC454995F84304 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E66478CB849448F78ED43114 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -55,6 +70,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064F8F1119D5C29100291398 /* Search VC */ = {
+			isa = PBXGroup;
+			children = (
+				0690D62719D33D8B007964A7 /* GRSearchViewController.h */,
+				0690D62819D33D8B007964A7 /* GRSearchViewController.m */,
+				064F8F1219D5C29B00291398 /* Items List */,
+				064F8F1719D5C47E00291398 /* Item Detail */,
+			);
+			name = "Search VC";
+			sourceTree = "<group>";
+		};
+		064F8F1219D5C29B00291398 /* Items List */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F1619D5C2B500291398 /* Cell */,
+				064F8F0E19D5C17B00291398 /* GRItemsListViewController.h */,
+				064F8F0F19D5C17B00291398 /* GRItemsListViewController.m */,
+			);
+			name = "Items List";
+			sourceTree = "<group>";
+		};
+		064F8F1619D5C2B500291398 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F1319D5C2B100291398 /* GRItemTableViewCell.h */,
+				064F8F1419D5C2B100291398 /* GRItemTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		064F8F1719D5C47E00291398 /* Item Detail */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F1819D5C4DF00291398 /* GRItemDetailViewController.h */,
+				064F8F1919D5C4DF00291398 /* GRItemDetailViewController.m */,
+			);
+			name = "Item Detail";
+			sourceTree = "<group>";
+		};
 		0690D61119D33D8B007964A7 = {
 			isa = PBXGroup;
 			children = (
@@ -80,13 +134,15 @@
 				0690D62219D33D8B007964A7 /* AppDelegate.m */,
 				0690D62419D33D8B007964A7 /* GRHomeViewController.h */,
 				0690D62519D33D8B007964A7 /* GRHomeViewController.m */,
-				0690D62719D33D8B007964A7 /* GRSearchViewController.h */,
-				0690D62819D33D8B007964A7 /* GRSearchViewController.m */,
+				064F8F1119D5C29100291398 /* Search VC */,
 				0690D64619D33F37007964A7 /* GRCartViewController.h */,
 				0690D64719D33F37007964A7 /* GRCartViewController.m */,
 				0690D64C19D349A4007964A7 /* GRMyAccountViewController.h */,
 				0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
+				0690D64F19D3580A007964A7 /* GRLoginViewController.h */,
+				0690D65019D3580A007964A7 /* GRLoginViewController.m */,
+				0690D65419D35B0D007964A7 /* Login.storyboard */,
 				0690D62D19D33D8B007964A7 /* Images.xcassets */,
 				0690D62F19D33D8B007964A7 /* LaunchScreen.xib */,
 				0690D61D19D33D8B007964A7 /* Supporting Files */,
@@ -97,6 +153,7 @@
 		0690D61D19D33D8B007964A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				064F8F0319D36FE200291398 /* Grocery App.entitlements */,
 				0690D61E19D33D8B007964A7 /* Info.plist */,
 				0690D61F19D33D8B007964A7 /* main.m */,
 			);
@@ -148,6 +205,11 @@
 					0690D61919D33D8B007964A7 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = CEBY93VF85;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -174,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0690D65519D35B0D007964A7 /* Login.storyboard in Resources */,
 				0690D62C19D33D8B007964A7 /* Main.storyboard in Resources */,
 				0690D63119D33D8B007964A7 /* LaunchScreen.xib in Resources */,
 				0690D62E19D33D8B007964A7 /* Images.xcassets in Resources */,
@@ -233,12 +296,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0690D65119D3580A007964A7 /* GRLoginViewController.m in Sources */,
 				0690D62919D33D8B007964A7 /* GRSearchViewController.m in Sources */,
+				064F8F1519D5C2B100291398 /* GRItemTableViewCell.m in Sources */,
 				0690D64E19D349A4007964A7 /* GRMyAccountViewController.m in Sources */,
 				0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */,
+				064F8F1019D5C17B00291398 /* GRItemsListViewController.m in Sources */,
 				0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */,
 				0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */,
 				0690D62019D33D8B007964A7 /* main.m in Sources */,
+				064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,24 +412,7 @@
 			baseConfigurationReference = BE40B0DD46FC454995F84304 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "Grocery App/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Debug;
-		};
-		0690D64219D33D8C007964A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE40B0DD46FC454995F84304 /* Pods.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Grocery App/Grocery App.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -372,7 +422,26 @@
 				INFOPLIST_FILE = "Grocery App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "199bee0e-39d9-4878-9371-9f86f147bec0";
+				PROVISIONING_PROFILE = "f956dddf-e0af-4f01-bc97-e3a295bf44e4";
+			};
+			name = Debug;
+		};
+		0690D64219D33D8C007964A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE40B0DD46FC454995F84304 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Grocery App/Grocery App.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Grocery App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1b09468-78da-4f57-93d6-701575dfbdbf";
 			};
 			name = Release;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "GRMyAccountViewController.h"
+#import "GRLoginViewController.h"
 
 @interface GRMyAccountViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -77,6 +78,21 @@
         default:
             cell.textLabel.text = @"Account Info";
             cell.imageView.image = [UIImage imageNamed:@"account_icn"];
+            break;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 4:
+        {
+            GRLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"GRLoginViewController"];
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:loginVC] animated:YES completion:nil];
+        }
+            break;
+            
+        default:
             break;
     }
 }
