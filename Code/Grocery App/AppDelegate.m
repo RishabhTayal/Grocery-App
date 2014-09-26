@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
+#import <PayPal-iOS-SDK/PayPalMobile.h>
 
 @interface AppDelegate ()
 
@@ -21,6 +22,8 @@
     [Crashlytics startWithAPIKey:@"02d3f7db22ac1a3e538528547a694d5230eb8278"];
 
     [MagicalRecord setupCoreDataStack];
+    
+    [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentProduction: @"AXN8ThDXFkgG2A7V6YuTTShIRz_KTNxdWwG3xj32C1BatV6_x1jUwk8PxSK_", PayPalEnvironmentSandbox:@"ARbi8xAoZXv_X4OvTfovyvHvbO-frUBlowY_D5GU0VsmrV8NhDNYPBC30Zoa"}];
     
     return YES;
 }

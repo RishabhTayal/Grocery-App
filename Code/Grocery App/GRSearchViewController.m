@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray* datasource;
 
+- (IBAction)cartButtonCliceked:(id)sender;
+
 @end
 
 @implementation GRSearchViewController
@@ -66,6 +68,11 @@
 //    GRSearchViewController* searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRSearchViewController"];
 //    searchVC.datasource = [NSMutableArray arrayWithObjects:@"Sub Cat 1", @"Sub Cat 2", @"Sub Cat 3", nil];
 //    [self.navigationController pushViewController:searchVC animated:YES];
+}
+
+-(IBAction)cartButtonCliceked:(id)sender
+{
+    self.tabBarController.selectedIndex = 2;
 }
 
 @end

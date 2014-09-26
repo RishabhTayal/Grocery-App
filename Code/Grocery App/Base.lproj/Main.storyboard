@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -16,34 +15,64 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="81" y="263" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="63" y="313" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="4jp-sb-yBu">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="A0w-jB-x09">
+                            <connections>
+                                <action selector="cartClicked:" destination="9pv-A4-QxB" id="Rds-dg-Yn5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="-266"/>
+            <point key="canvasLocation" x="832" y="-310"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="91R-Bn-FYz">
+            <objects>
+                <tableViewController id="s4x-7Z-izQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hcm-lb-B2k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="odv-I0-h8F">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="odv-I0-h8F" id="kFi-v6-dFv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s4x-7Z-izQ" id="nhB-fS-xhv"/>
+                            <outlet property="delegate" destination="s4x-7Z-izQ" id="LW4-9d-NN2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="F8T-Vs-dDg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cD-9g-zot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="-605"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="7zR-0P-XW7">
+            <objects>
+                <navigationController id="Xnx-bd-Jlf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="deO-6Y-ISq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OpT-6s-Yzm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="jI9-Ex-YyZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t63-ca-7OU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="-310"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -79,7 +108,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="D09-IG-1yP"/>
+                    <navigationItem key="navigationItem" id="D09-IG-1yP">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="90a-md-drX">
+                            <connections>
+                                <action selector="cartButtonCliceked:" destination="8rJ-Kc-sve" id="ECa-NX-pW5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Kxh-g8-Kap" id="MEl-BH-5w4"/>
                     </connections>
@@ -361,7 +396,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="first" id="CNg-YQ-tNC"/>
-                    <navigationItem key="navigationItem" id="Trp-5Z-32R"/>
+                    <navigationItem key="navigationItem" id="Trp-5Z-32R">
+                        <barButtonItem key="rightBarButtonItem" title="Checkout" id="ul5-Jn-bOj"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="bfH-KU-nrt" id="8X7-5d-Zbd"/>
                     </connections>
@@ -369,6 +406,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPg-sS-yDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="844" y="994"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="mlQ-Ov-pZR">
+            <objects>
+                <viewController restorationIdentifier="GRCheckoutViewController" storyboardIdentifier="GRCheckoutViewController" id="6oC-MV-V15" customClass="GRCheckoutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bj1-Gh-Kes"/>
+                        <viewControllerLayoutGuide type="bottom" id="4YF-uM-601"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fA0-th-JCm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNu-dd-Nkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="994"/>
         </scene>
         <!--My Account-->
         <scene sceneID="U60-JM-aCe">
@@ -440,7 +496,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="Xnx-bd-Jlf" kind="relationship" relationship="viewControllers" id="wcz-HJ-wce"/>
                         <segue destination="IA1-Ws-Adj" kind="relationship" relationship="viewControllers" id="rxI-be-OaR"/>
                         <segue destination="t25-Vl-FD6" kind="relationship" relationship="viewControllers" id="e2k-I8-5wZ"/>
                         <segue destination="V70-Ai-oUa" kind="relationship" relationship="viewControllers" id="vYU-05-Cfp"/>

@@ -8,8 +8,9 @@
 
 #import "GRMyAccountViewController.h"
 #import "GRLoginViewController.h"
+#import <CardIO/CardIO.h>
 
-@interface GRMyAccountViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface GRMyAccountViewController ()<UITableViewDelegate, UITableViewDataSource, CardIOPaymentViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView* tableView;
 
@@ -81,6 +82,13 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
+            case 2:
+        {
+            CardIOPaymentViewController* scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
+            scanViewController.appToken = @"db60839a7e194c93bbe3acf52c976397";
+            [self presentViewController:scanViewController animated:YES completion:nil];
+        }
+            break;
         case 4:
         {
             GRLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"GRLoginViewController"];
@@ -91,6 +99,18 @@
         default:
             break;
     }
+}
+
+#pragma mark - CardIO Delegate Methods
+
+-(void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)cardInfo inPaymentViewController:(CardIOPaymentViewController *)paymentViewController
+{
+    [paymentViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)paymentViewController
+{
+    [paymentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

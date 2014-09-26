@@ -10,6 +10,7 @@
 #import "Cart.h"
 #import <UITableView-NXEmptyView/UITableView+NXEmptyView.h>
 #import "GRCartItemTableViewCell.h"
+#import "GRCheckoutViewController.h"
 
 @interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -28,6 +29,7 @@
     self.tableView.nxEV_emptyView = [[[NSBundle mainBundle] loadNibNamed:@"EmptyCartView" owner:self options:nil] objectAtIndex:0];
     self.tableView.nxEV_hideSeparatorLinesWheyShowingEmptyView = YES;
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Checkout" style:UIBarButtonItemStyleBordered target:self action:@selector(checkoutClicked:)];
     // Do any additional setup after loading the view.
 }
 
@@ -38,7 +40,10 @@
     _datasource = [NSMutableArray arrayWithArray:[Cart MR_findAll]];
     
     if (_datasource.count != 0) {
-        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    } else {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
     }
     
     [self.tableView reloadData];
@@ -55,6 +60,12 @@
     [super setEditing:editing animated:animated];
     
     [self.tableView setEditing:editing animated:animated];
+}
+
+-(void)checkoutClicked:(id)sender
+{
+    GRCheckoutViewController* checkoutVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRCheckoutViewController"];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:checkoutVC] animated:YES completion:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -97,11 +108,16 @@
         Cart* item = _datasource[indexPath.row];
         [item MR_deleteEntity];
         
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            
+        }];
+        
         [_datasource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         if (_datasource.count == 0) {
-            self.navigationItem.rightBarButtonItem = nil;
+            self.navigationItem.leftBarButtonItem = nil;
+            self.navigationItem.rightBarButtonItem.enabled = NO;
         }
     }
 }

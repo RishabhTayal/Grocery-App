@@ -10,6 +10,8 @@
 
 @interface GRHomeViewController ()
 
+- (IBAction)cartClicked:(id)sender;
+
 @end
 
 @implementation GRHomeViewController
@@ -22,6 +24,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)cartClicked:(id)sender
+{
+    self.tabBarController.selectedIndex = 2;
 }
 
 @end
