@@ -7,6 +7,7 @@
 //
 
 #import "GRItemDetailViewController.h"
+#import "Cart.h"
 
 @interface GRItemDetailViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -40,7 +41,13 @@
 
 -(void)addToCartClicked:(id)sender
 {
-    
+    Cart* cart = [Cart MR_createEntity];
+    cart.title = _titleLabel.text;
+//    cart.desc =
+//    cart.q
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        
+    }];
 }
 
 -(IBAction)stepperChanged:(UIStepper*)sender

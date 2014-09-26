@@ -11,6 +11,9 @@
 		064F8F1019D5C17B00291398 /* GRItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F0F19D5C17B00291398 /* GRItemsListViewController.m */; };
 		064F8F1519D5C2B100291398 /* GRItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F1419D5C2B100291398 /* GRItemTableViewCell.m */; };
 		064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F1919D5C4DF00291398 /* GRItemDetailViewController.m */; };
+		064F8F2619D5DF8100291398 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F2419D5DF8100291398 /* Model.xcdatamodeld */; };
+		064F8F2919D5E00400291398 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F2819D5E00400291398 /* Cart.m */; };
+		064F8F2E19D5E4FA00291398 /* EmptyCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */; };
 		0690D62019D33D8B007964A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D61F19D33D8B007964A7 /* main.m */; };
 		0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62219D33D8B007964A7 /* AppDelegate.m */; };
 		0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62519D33D8B007964A7 /* GRHomeViewController.m */; };
@@ -33,6 +36,12 @@
 		064F8F1419D5C2B100291398 /* GRItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRItemTableViewCell.m; sourceTree = "<group>"; };
 		064F8F1819D5C4DF00291398 /* GRItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRItemDetailViewController.h; sourceTree = "<group>"; };
 		064F8F1919D5C4DF00291398 /* GRItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRItemDetailViewController.m; sourceTree = "<group>"; };
+		064F8F2319D5DDF300291398 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		064F8F2519D5DF8100291398 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		064F8F2719D5E00400291398 /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		064F8F2819D5E00400291398 /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
+		064F8F2C19D5E07400291398 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCartView.xib; sourceTree = "<group>"; };
 		0690D61A19D33D8B007964A7 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0690D61E19D33D8B007964A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0690D61F19D33D8B007964A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +135,16 @@
 			name = "My Account";
 			sourceTree = "<group>";
 		};
+		064F8F2A19D5E00900291398 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F2419D5DF8100291398 /* Model.xcdatamodeld */,
+				064F8F2719D5E00400291398 /* Cart.h */,
+				064F8F2819D5E00400291398 /* Cart.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0690D61119D33D8B007964A7 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +173,7 @@
 				064F8F1119D5C29100291398 /* Search VC */,
 				0690D64619D33F37007964A7 /* GRCartViewController.h */,
 				0690D64719D33F37007964A7 /* GRCartViewController.m */,
+				064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */,
 				064F8F2219D5DC0400291398 /* My Account */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
 				0690D64F19D3580A007964A7 /* GRLoginViewController.h */,
@@ -161,6 +181,7 @@
 				0690D65419D35B0D007964A7 /* Login.storyboard */,
 				0690D62D19D33D8B007964A7 /* Images.xcassets */,
 				0690D62F19D33D8B007964A7 /* LaunchScreen.xib */,
+				064F8F2A19D5E00900291398 /* Model */,
 				0690D61D19D33D8B007964A7 /* Supporting Files */,
 			);
 			path = "Grocery App";
@@ -169,9 +190,11 @@
 		0690D61D19D33D8B007964A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				064F8F2319D5DDF300291398 /* Constants.h */,
 				064F8F0319D36FE200291398 /* Grocery App.entitlements */,
 				0690D61E19D33D8B007964A7 /* Info.plist */,
 				0690D61F19D33D8B007964A7 /* main.m */,
+				064F8F2C19D5E07400291398 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,6 +279,7 @@
 				0690D62C19D33D8B007964A7 /* Main.storyboard in Resources */,
 				0690D63119D33D8B007964A7 /* LaunchScreen.xib in Resources */,
 				0690D62E19D33D8B007964A7 /* Images.xcassets in Resources */,
+				064F8F2E19D5E4FA00291398 /* EmptyCartView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,8 +343,10 @@
 				0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */,
 				064F8F1019D5C17B00291398 /* GRItemsListViewController.m in Sources */,
 				0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */,
+				064F8F2919D5E00400291398 /* Cart.m in Sources */,
 				0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */,
 				0690D62019D33D8B007964A7 /* main.m in Sources */,
+				064F8F2619D5DF8100291398 /* Model.xcdatamodeld in Sources */,
 				064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +461,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = "Grocery App/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +481,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = "Grocery App/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +511,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		064F8F2419D5DF8100291398 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				064F8F2519D5DF8100291398 /* Model.xcdatamodel */,
+			);
+			currentVersion = 064F8F2519D5DF8100291398 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0690D61219D33D8B007964A7 /* Project object */;
 }

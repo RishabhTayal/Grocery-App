@@ -20,6 +20,8 @@
 {
     [Crashlytics startWithAPIKey:@"02d3f7db22ac1a3e538528547a694d5230eb8278"];
 
+    [MagicalRecord setupCoreDataStack];
+    
     return YES;
 }
 

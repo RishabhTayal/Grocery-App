@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  Grocery App
+//
+//  Created by Rishabh Tayal on 9/26/14.
+//  Copyright (c) 2014 Appikon Mobile. All rights reserved.
+//
+
+#ifndef Grocery_App_PrefixHeader_pch
+#define Grocery_App_PrefixHeader_pch
+
+#import <CoreData+MagicalRecord.h>
+
+#endif

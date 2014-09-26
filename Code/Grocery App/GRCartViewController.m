@@ -7,16 +7,35 @@
 //
 
 #import "GRCartViewController.h"
+#import "Cart.h"
+#import <UITableView-NXEmptyView/UITableView+NXEmptyView.h>
 
-@interface GRCartViewController ()
+@interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView* tableView;
+
+@property (nonatomic, strong) NSMutableArray* datasource;
 
 @end
 
 @implementation GRCartViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    self.tableView.nxEV_emptyView = [[[NSBundle mainBundle] loadNibNamed:@"EmptyCartView" owner:self options:nil] objectAtIndex:0];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    _datasource = [NSMutableArray arrayWithArray:[Cart MR_findAll]];
+    
+    [self.tableView reloadData];
+    NSLog(@"Cart Datasource: %@", _datasource);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +43,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _datasource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 @end
