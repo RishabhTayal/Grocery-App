@@ -28,8 +28,6 @@
     self.tableView.nxEV_emptyView = [[[NSBundle mainBundle] loadNibNamed:@"EmptyCartView" owner:self options:nil] objectAtIndex:0];
     self.tableView.nxEV_hideSeparatorLinesWheyShowingEmptyView = YES;
     
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     // Do any additional setup after loading the view.
 }
 
@@ -39,10 +37,15 @@
     
     _datasource = [NSMutableArray arrayWithArray:[Cart MR_findAll]];
     
+    if (_datasource.count != 0) {
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    }
+    
     [self.tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -74,7 +77,7 @@
 }
 
 - (void)configureCell:(GRCartItemTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{   
+{
     Cart* item = _datasource[indexPath.row];
     
     cell.itemImageView.image = [UIImage imageNamed:@"sev"];
@@ -96,6 +99,10 @@
         
         [_datasource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        if (_datasource.count == 0) {
+            self.navigationItem.rightBarButtonItem = nil;
+        }
     }
 }
 
