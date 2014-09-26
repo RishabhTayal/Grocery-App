@@ -7,10 +7,14 @@
 //
 
 #import "GRLoginViewController.h"
+#import "AppDelegate.h"
 
 @interface GRLoginViewController ()
 
 -(IBAction)cancelClicked:(id)sender;
+-(IBAction)skipLoginClicked:(id)sender;
+-(IBAction)loginWithFacebookClicked:(id)sender;
+-(IBAction)loginWithTwitterClicked:(id)sender;
 
 @end
 
@@ -19,6 +23,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:kUDUserLoggedIn] boolValue] == true) {
+        [self setMainView];
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -29,16 +37,32 @@
 
 -(void)cancelClicked:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction)skipLoginClicked:(id)sender
+{
+    [self setMainView];
 }
-*/
+
+-(IBAction)loginWithFacebookClicked:(id)sender
+{
+    [[[UIAlertView alloc] initWithTitle:@"Coming soon" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+}
+
+-(IBAction)loginWithTwitterClicked:(id)sender
+{
+    [[[UIAlertView alloc] initWithTitle:@"Coming soon" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+}
+
+-(void)setMainView
+{
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController* mainVC = [sb instantiateViewControllerWithIdentifier:@"GRTabController"];
+    
+    AppDelegate* appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    appDelegate.window.rootViewController = mainVC;
+}
+
 
 @end

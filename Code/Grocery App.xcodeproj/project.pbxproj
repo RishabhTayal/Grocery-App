@@ -27,7 +27,6 @@
 		0690D64B19D33FF8007964A7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0690D64A19D33FF8007964A7 /* Crashlytics.framework */; };
 		0690D64E19D349A4007964A7 /* GRMyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */; };
 		0690D65119D3580A007964A7 /* GRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D65019D3580A007964A7 /* GRLoginViewController.m */; };
-		0690D65519D35B0D007964A7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0690D65419D35B0D007964A7 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +66,6 @@
 		0690D64D19D349A4007964A7 /* GRMyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMyAccountViewController.m; sourceTree = "<group>"; };
 		0690D64F19D3580A007964A7 /* GRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLoginViewController.h; sourceTree = "<group>"; };
 		0690D65019D3580A007964A7 /* GRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLoginViewController.m; sourceTree = "<group>"; };
-		0690D65419D35B0D007964A7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BE40B0DD46FC454995F84304 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E66478CB849448F78ED43114 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,7 +184,6 @@
 			children = (
 				0690D64F19D3580A007964A7 /* GRLoginViewController.h */,
 				0690D65019D3580A007964A7 /* GRLoginViewController.m */,
-				0690D65419D35B0D007964A7 /* Login.storyboard */,
 			);
 			name = "Login Screen";
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0690D65519D35B0D007964A7 /* Login.storyboard in Resources */,
 				0690D62C19D33D8B007964A7 /* Main.storyboard in Resources */,
 				0690D63119D33D8B007964A7 /* LaunchScreen.xib in Resources */,
 				0690D62E19D33D8B007964A7 /* Images.xcassets in Resources */,
