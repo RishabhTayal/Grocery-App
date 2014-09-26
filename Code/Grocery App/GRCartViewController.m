@@ -9,6 +9,7 @@
 #import "GRCartViewController.h"
 #import "Cart.h"
 #import <UITableView-NXEmptyView/UITableView+NXEmptyView.h>
+#import "GRCartItemTableViewCell.h"
 
 @interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -55,16 +56,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    GRCartItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     [self configureCell:cell forRowAtIndexPath:indexPath];
     
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)configureCell:(GRCartItemTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{   
+    Cart* item = _datasource[indexPath.row];
     
+    cell.itemImageView.image = [UIImage imageNamed:@"sev"];
+    cell.itemNameLabel.text = item.title;
 }
 
 @end

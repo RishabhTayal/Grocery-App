@@ -14,6 +14,7 @@
 		064F8F2619D5DF8100291398 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F2419D5DF8100291398 /* Model.xcdatamodeld */; };
 		064F8F2919D5E00400291398 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F2819D5E00400291398 /* Cart.m */; };
 		064F8F2E19D5E4FA00291398 /* EmptyCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */; };
+		064F8F3219D5E65F00291398 /* GRCartItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F3119D5E65F00291398 /* GRCartItemTableViewCell.m */; };
 		0690D62019D33D8B007964A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D61F19D33D8B007964A7 /* main.m */; };
 		0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62219D33D8B007964A7 /* AppDelegate.m */; };
 		0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62519D33D8B007964A7 /* GRHomeViewController.m */; };
@@ -42,6 +43,8 @@
 		064F8F2819D5E00400291398 /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 		064F8F2C19D5E07400291398 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCartView.xib; sourceTree = "<group>"; };
+		064F8F3019D5E65F00291398 /* GRCartItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRCartItemTableViewCell.h; sourceTree = "<group>"; };
+		064F8F3119D5E65F00291398 /* GRCartItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRCartItemTableViewCell.m; sourceTree = "<group>"; };
 		0690D61A19D33D8B007964A7 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0690D61E19D33D8B007964A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0690D61F19D33D8B007964A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,6 +148,26 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		064F8F2F19D5E64D00291398 /* Cart VC */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F3319D5E66300291398 /* Cell */,
+				0690D64619D33F37007964A7 /* GRCartViewController.h */,
+				0690D64719D33F37007964A7 /* GRCartViewController.m */,
+				064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */,
+			);
+			name = "Cart VC";
+			sourceTree = "<group>";
+		};
+		064F8F3319D5E66300291398 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F3019D5E65F00291398 /* GRCartItemTableViewCell.h */,
+				064F8F3119D5E65F00291398 /* GRCartItemTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		0690D61119D33D8B007964A7 = {
 			isa = PBXGroup;
 			children = (
@@ -171,9 +194,7 @@
 				0690D62419D33D8B007964A7 /* GRHomeViewController.h */,
 				0690D62519D33D8B007964A7 /* GRHomeViewController.m */,
 				064F8F1119D5C29100291398 /* Search VC */,
-				0690D64619D33F37007964A7 /* GRCartViewController.h */,
-				0690D64719D33F37007964A7 /* GRCartViewController.m */,
-				064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */,
+				064F8F2F19D5E64D00291398 /* Cart VC */,
 				064F8F2219D5DC0400291398 /* My Account */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
 				0690D64F19D3580A007964A7 /* GRLoginViewController.h */,
@@ -347,6 +368,7 @@
 				0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */,
 				0690D62019D33D8B007964A7 /* main.m in Sources */,
 				064F8F2619D5DF8100291398 /* Model.xcdatamodeld in Sources */,
+				064F8F3219D5E65F00291398 /* GRCartItemTableViewCell.m in Sources */,
 				064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
