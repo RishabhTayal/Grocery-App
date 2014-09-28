@@ -16,6 +16,7 @@
 @interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView* tableView;
+@property (nonatomic, strong) IBOutlet UILabel* totalPriceLabel;
 
 @property (nonatomic, strong) NSMutableArray* datasource;
 
@@ -79,6 +80,28 @@
     return _datasource.count;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (_datasource.count == 0) {
+        return nil;
+    }
+    UIView* footerView = [[NSBundle mainBundle] loadNibNamed:@"GRCartFooterView" owner:self options:nil][0];
+    float totalPrice = 0.0;
+    for (Cart* item in _datasource) {
+        totalPrice = totalPrice + ([item.price floatValue] * [item.quantity integerValue]);
+    }
+    _totalPriceLabel.text = [NSString stringWithFormat:@"%f", totalPrice];
+    return footerView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (_datasource.count == 0) {
+        return 0;
+    }
+    return 100;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GRCartItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -126,6 +149,7 @@
             self.navigationItem.leftBarButtonItem = nil;
             self.navigationItem.rightBarButtonItem.enabled = NO;
         }
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

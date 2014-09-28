@@ -44,7 +44,7 @@
 {
     Cart* cart = [Cart MR_createEntity];
     cart.title = _titleLabel.text;
-    
+    cart.price = [NSNumber numberWithFloat:4.99];
     cart.quantity = [NSNumber numberWithDouble:self.quantityStepper.value];
 //    cart.desc =
 //    cart.q

@@ -9,6 +9,7 @@
 #import "GRMyAccountViewController.h"
 #import "GRLoginViewController.h"
 #import <CardIO/CardIO.h>
+#import "GROrderHistoryViewController.h"
 
 @interface GRMyAccountViewController ()<UITableViewDelegate, UITableViewDataSource, CardIOPaymentViewControllerDelegate>
 
@@ -82,6 +83,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
+            case 0:
+        {
+            GROrderHistoryViewController* orderHistroryVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GROrderHistoryViewController"];
+            [self.navigationController pushViewController:orderHistroryVC animated:YES];
+        }
+            break;
             case 2:
         {
             CardIOPaymentViewController* scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
