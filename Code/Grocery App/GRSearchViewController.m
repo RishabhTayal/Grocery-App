@@ -24,7 +24,13 @@
     [super viewDidLoad];
     
     if (!_datasource) {
-        _datasource = [NSMutableArray arrayWithObjects:@"Category 1", @"Category 2", @"Category 3", nil];
+//        _datasource = [NSMutableArray arrayWithObjects:@"Category 1", @"Category 2", @"Category 3", nil];
+        GRWebService* caller = [[GRWebService alloc] init];
+        [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
+            DLog(@"%@", result);
+            _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"category"]];
+            [self.tableView reloadData];
+        }];
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -60,7 +66,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        cell.textLabel.text = _datasource[indexPath.row];
+        cell.textLabel.text = _datasource[indexPath.row][@"name"];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

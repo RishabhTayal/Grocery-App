@@ -12,4 +12,6 @@
 #import <CoreData+MagicalRecord.h>
 #import "Constants.h"
 
+#import "GRWebService.h"
+
 #endif

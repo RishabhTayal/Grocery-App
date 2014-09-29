@@ -18,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    GRWebService* caller = [[GRWebService alloc] init];
+    [caller searchProductsForText:@"a" callback:^(NSArray *result, NSError *error) {
+        DLog(@"%@", result);
+    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

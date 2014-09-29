@@ -23,6 +23,7 @@
 		064F8F4619D6175900291398 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F8F4519D6175900291398 /* Accounts.framework */; };
 		064F8F4919D7BC7A00291398 /* GROrderHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F4819D7BC7A00291398 /* GROrderHistoryViewController.m */; };
 		064F8F4B19D7BF5A00291398 /* GRCartFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8F4A19D7BF5A00291398 /* GRCartFooterView.xib */; };
+		064F8F4F19D8A09900291398 /* GRWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F4E19D8A09900291398 /* GRWebService.m */; };
 		0690D62019D33D8B007964A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D61F19D33D8B007964A7 /* main.m */; };
 		0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62219D33D8B007964A7 /* AppDelegate.m */; };
 		0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62519D33D8B007964A7 /* GRHomeViewController.m */; };
@@ -63,6 +64,8 @@
 		064F8F4719D7BC7A00291398 /* GROrderHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GROrderHistoryViewController.h; sourceTree = "<group>"; };
 		064F8F4819D7BC7A00291398 /* GROrderHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GROrderHistoryViewController.m; sourceTree = "<group>"; };
 		064F8F4A19D7BF5A00291398 /* GRCartFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRCartFooterView.xib; sourceTree = "<group>"; };
+		064F8F4D19D8A09900291398 /* GRWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRWebService.h; sourceTree = "<group>"; };
+		064F8F4E19D8A09900291398 /* GRWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRWebService.m; sourceTree = "<group>"; };
 		0690D61A19D33D8B007964A7 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0690D61E19D33D8B007964A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0690D61F19D33D8B007964A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -220,6 +223,15 @@
 			name = Checkout;
 			sourceTree = "<group>";
 		};
+		064F8F4C19D8A06B00291398 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F4D19D8A09900291398 /* GRWebService.h */,
+				064F8F4E19D8A09900291398 /* GRWebService.m */,
+			);
+			name = Webservice;
+			sourceTree = "<group>";
+		};
 		0690D61119D33D8B007964A7 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +253,7 @@
 		0690D61C19D33D8B007964A7 /* Grocery App */ = {
 			isa = PBXGroup;
 			children = (
+				064F8F4C19D8A06B00291398 /* Webservice */,
 				0690D62119D33D8B007964A7 /* AppDelegate.h */,
 				0690D62219D33D8B007964A7 /* AppDelegate.m */,
 				064F8F3419D5EF7F00291398 /* Home VC */,
@@ -420,6 +433,7 @@
 				064F8F1019D5C17B00291398 /* GRItemsListViewController.m in Sources */,
 				0690D64819D33F37007964A7 /* GRCartViewController.m in Sources */,
 				064F8F2919D5E00400291398 /* Cart.m in Sources */,
+				064F8F4F19D8A09900291398 /* GRWebService.m in Sources */,
 				0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */,
 				064F8F3819D5F82200291398 /* GRCheckoutViewController.m in Sources */,
 				0690D62019D33D8B007964A7 /* main.m in Sources */,
