@@ -34,7 +34,7 @@
  *  Webservice API URL
  */
 
-#define kWSURLBase @"http://sidev.elasticbeanstalk.com/api/v1/"
+#define kWSURLBase @"http://sife-env.elasticbeanstalk.com/api/v1/"
 
 #define kWSURLCategories @"catalog/categories"
 #define kWSURLSearchProducts @"catalog/search/products"

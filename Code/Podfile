@@ -7,3 +7,4 @@ pod "MagicalRecord"
 pod 'UITableView-NXEmptyView'
 pod 'CardIO'
 pod 'PayPal-iOS-SDK'
+pod 'KLScrollSelect'

@@ -24,6 +24,8 @@
 		064F8F4919D7BC7A00291398 /* GROrderHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F4819D7BC7A00291398 /* GROrderHistoryViewController.m */; };
 		064F8F4B19D7BF5A00291398 /* GRCartFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F8F4A19D7BF5A00291398 /* GRCartFooterView.xib */; };
 		064F8F4F19D8A09900291398 /* GRWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F4E19D8A09900291398 /* GRWebService.m */; };
+		064F8F5419D9AB0100291398 /* GRContainerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F5319D9AB0100291398 /* GRContainerTableViewCell.m */; };
+		064F8F5719D9ABA400291398 /* GRArticleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F5619D9ABA400291398 /* GRArticleCollectionViewCell.m */; };
 		0690D62019D33D8B007964A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D61F19D33D8B007964A7 /* main.m */; };
 		0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62219D33D8B007964A7 /* AppDelegate.m */; };
 		0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62519D33D8B007964A7 /* GRHomeViewController.m */; };
@@ -66,6 +68,10 @@
 		064F8F4A19D7BF5A00291398 /* GRCartFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRCartFooterView.xib; sourceTree = "<group>"; };
 		064F8F4D19D8A09900291398 /* GRWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRWebService.h; sourceTree = "<group>"; };
 		064F8F4E19D8A09900291398 /* GRWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRWebService.m; sourceTree = "<group>"; };
+		064F8F5219D9AB0000291398 /* GRContainerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRContainerTableViewCell.h; sourceTree = "<group>"; };
+		064F8F5319D9AB0100291398 /* GRContainerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRContainerTableViewCell.m; sourceTree = "<group>"; };
+		064F8F5519D9ABA400291398 /* GRArticleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRArticleCollectionViewCell.h; sourceTree = "<group>"; };
+		064F8F5619D9ABA400291398 /* GRArticleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRArticleCollectionViewCell.m; sourceTree = "<group>"; };
 		0690D61A19D33D8B007964A7 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0690D61E19D33D8B007964A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0690D61F19D33D8B007964A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 		064F8F3419D5EF7F00291398 /* Home VC */ = {
 			isa = PBXGroup;
 			children = (
+				064F8F5819D9AC2800291398 /* Cells */,
 				0690D62419D33D8B007964A7 /* GRHomeViewController.h */,
 				0690D62519D33D8B007964A7 /* GRHomeViewController.m */,
 			);
@@ -230,6 +237,17 @@
 				064F8F4E19D8A09900291398 /* GRWebService.m */,
 			);
 			name = Webservice;
+			sourceTree = "<group>";
+		};
+		064F8F5819D9AC2800291398 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F5219D9AB0000291398 /* GRContainerTableViewCell.h */,
+				064F8F5319D9AB0100291398 /* GRContainerTableViewCell.m */,
+				064F8F5519D9ABA400291398 /* GRArticleCollectionViewCell.h */,
+				064F8F5619D9ABA400291398 /* GRArticleCollectionViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		0690D61119D33D8B007964A7 = {
@@ -427,6 +445,7 @@
 			files = (
 				0690D65119D3580A007964A7 /* GRLoginViewController.m in Sources */,
 				0690D62919D33D8B007964A7 /* GRSearchViewController.m in Sources */,
+				064F8F5419D9AB0100291398 /* GRContainerTableViewCell.m in Sources */,
 				064F8F1519D5C2B100291398 /* GRItemTableViewCell.m in Sources */,
 				0690D64E19D349A4007964A7 /* GRMyAccountViewController.m in Sources */,
 				0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */,
@@ -440,6 +459,7 @@
 				064F8F3C19D6110500291398 /* GRTabViewController.m in Sources */,
 				064F8F2619D5DF8100291398 /* Model.xcdatamodeld in Sources */,
 				064F8F3219D5E65F00291398 /* GRCartItemTableViewCell.m in Sources */,
+				064F8F5719D9ABA400291398 /* GRArticleCollectionViewCell.m in Sources */,
 				064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */,
 				064F8F4919D7BC7A00291398 /* GROrderHistoryViewController.m in Sources */,
 			);
