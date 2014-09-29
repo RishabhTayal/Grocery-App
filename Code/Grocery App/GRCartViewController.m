@@ -137,13 +137,14 @@
         [item MR_deleteEntity];
         
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-            
+            [((GRTabViewController*)self.tabBarController) cartUpdated];
         }];
         
         [_datasource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        [((GRTabViewController*)self.tabBarController) removeFromCart];
+//        [((GRTabViewController*)self.tabBarController) removeFromCart];
+        
         
         if (_datasource.count == 0) {
             self.navigationItem.leftBarButtonItem = nil;

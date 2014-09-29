@@ -49,11 +49,14 @@
 //    cart.desc =
 //    cart.q
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        self.navigationItem.rightBarButtonItem.title = @"Added to cart";
+        self.navigationItem.rightBarButtonItem.enabled = NO;
         
+        [((GRTabViewController*)self.tabBarController) cartUpdated];
     }];
     
-    GRTabViewController* tabBar = (GRTabViewController*)self.tabBarController;
-    [tabBar addedToCart];    
+//    GRTabViewController* tabBar = (GRTabViewController*)self.tabBarController;
+//    [tabBar addedToCart];    
 }
 
 -(IBAction)stepperChanged:(UIStepper*)sender

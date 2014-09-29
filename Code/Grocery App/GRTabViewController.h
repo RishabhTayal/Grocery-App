@@ -10,7 +10,6 @@
 
 @interface GRTabViewController : UITabBarController
 
--(void)addedToCart;
--(void)removeFromCart;
+-(void)cartUpdated;
 
 @end

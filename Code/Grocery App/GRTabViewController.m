@@ -7,6 +7,7 @@
 //
 
 #import "GRTabViewController.h"
+#import "Cart.h"
 
 @interface GRTabViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self cartUpdated];
     // Do any additional setup after loading the view.
 }
 
@@ -24,29 +27,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)addedToCart
+-(void)cartUpdated
 {
-    UITabBarItem* tbi = ((UIViewController*)self.viewControllers[2]).tabBarItem;
-    tbi.badgeValue = [NSString stringWithFormat:@"%d", [tbi.badgeValue intValue] + 1];
-}
+    NSInteger totalItem = [Cart MR_countOfEntities];
 
--(void)removeFromCart
-{
     UITabBarItem* tbi = ((UIViewController*)self.viewControllers[2]).tabBarItem;
-    tbi.badgeValue = [NSString stringWithFormat:@"%d", [tbi.badgeValue intValue] - 1];
-    if ([tbi.badgeValue intValue] <= 0) {
+    if (totalItem <= 0) {
         tbi.badgeValue = nil;
+    } else {
+        tbi.badgeValue = [NSString stringWithFormat:@"%d", totalItem];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

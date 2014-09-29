@@ -7,6 +7,7 @@
 //
 
 #import "GRSearchViewController.h"
+#import "GRItemsListViewController.h"
 
 @interface GRSearchViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -23,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tabBarController.tabBar.translucent = NO;
+
     if (!_datasource) {
         GRWebService* caller = [[GRWebService alloc] init];
         [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
@@ -73,9 +75,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    GRSearchViewController* searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRSearchViewController"];
-    //    searchVC.datasource = [NSMutableArray arrayWithObjects:@"Sub Cat 1", @"Sub Cat 2", @"Sub Cat 3", nil];
-    //    [self.navigationController pushViewController:searchVC animated:YES];
+    GRItemsListViewController* listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRItemsListViewController"];
+    [self.navigationController pushViewController:listVC animated:YES];
+    [self.searchBar resignFirstResponder];
 }
 
 -(IBAction)cartButtonCliceked:(id)sender
@@ -88,11 +90,13 @@
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     searchBar.showsCancelButton = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     searchBar.showsCancelButton = NO;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -122,10 +126,19 @@
     [searchBar resignFirstResponder];
 }
 
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    return YES;
+}
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.searchBar resignFirstResponder];
+//    self.searchBar.showsCancelButton = NO;
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 @end
