@@ -8,9 +8,10 @@
 
 #import "GRSearchViewController.h"
 
-@interface GRSearchViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface GRSearchViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView* tableView;
+@property (nonatomic, strong) IBOutlet UISearchBar* searchBar;
 
 @property (nonatomic, strong) NSMutableArray* datasource;
 
@@ -24,7 +25,6 @@
     [super viewDidLoad];
     
     if (!_datasource) {
-//        _datasource = [NSMutableArray arrayWithObjects:@"Category 1", @"Category 2", @"Category 3", nil];
         GRWebService* caller = [[GRWebService alloc] init];
         [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
             DLog(@"%@", result);
@@ -32,7 +32,6 @@
             [self.tableView reloadData];
         }];
     }
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -52,6 +51,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return 1;
+    }
     return _datasource.count;
 }
 
@@ -66,19 +68,64 @@
 
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        cell.textLabel.text = _datasource[indexPath.row][@"name"];
+    cell.textLabel.text = _datasource[indexPath.row][@"name"];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    GRSearchViewController* searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRSearchViewController"];
-//    searchVC.datasource = [NSMutableArray arrayWithObjects:@"Sub Cat 1", @"Sub Cat 2", @"Sub Cat 3", nil];
-//    [self.navigationController pushViewController:searchVC animated:YES];
+    //    GRSearchViewController* searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRSearchViewController"];
+    //    searchVC.datasource = [NSMutableArray arrayWithObjects:@"Sub Cat 1", @"Sub Cat 2", @"Sub Cat 3", nil];
+    //    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 -(IBAction)cartButtonCliceked:(id)sender
 {
     self.tabBarController.selectedIndex = 2;
+}
+
+#pragma mark - UISearchbar Delegate
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = YES;
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = NO;
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    GRWebService* caller = [[GRWebService alloc] init];
+    if (searchText.length == 0) {
+        [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
+            _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"category"]];
+            [self.tableView reloadData];
+        }];
+    } else {
+        
+        [caller searchProductsForText:searchText callback:^(NSArray *result, NSError *error) {
+            _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"products"]];
+            [self.tableView reloadData];
+        }];
+    }
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.searchBar resignFirstResponder];
 }
 
 @end

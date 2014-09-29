@@ -22,7 +22,6 @@
     self.layer.masksToBounds = NO;
     self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds    ].CGPath;
     self.layer.shadowOpacity = 0.75f;
-    
 }
 
 @end
