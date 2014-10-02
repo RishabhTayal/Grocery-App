@@ -55,6 +55,10 @@
         [((GRTabViewController*)self.tabBarController) cartUpdated];
     }];
     
+    GRWebService* caller = [[GRWebService alloc] init];
+    [caller addToCart:nil callback:^(id result, NSError *error) {
+//        DLog(@"%@", result);
+    }];
 //    GRTabViewController* tabBar = (GRTabViewController*)self.tabBarController;
 //    [tabBar addedToCart];    
 }

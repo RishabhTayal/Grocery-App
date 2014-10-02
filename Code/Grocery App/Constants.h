@@ -38,5 +38,6 @@
 
 #define kWSURLCategories @"catalog/categories"
 #define kWSURLSearchProducts @"catalog/search/products"
+#define kWSURLAddToCart @"cart"
 
 #endif

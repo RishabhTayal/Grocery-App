@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^GRCompletionBlockGet)(NSArray *result, NSError *error);
+typedef void (^GRCompletionBlockPost)(id result, NSError* error);
+
 @interface GRWebService : NSObject
 
--(void)getCategoriesWithCallback:(void (^) (NSArray* result, NSError* error))callback;
--(void)searchProductsForText:(NSString*)queryText callback:(void (^)(NSArray *result, NSError *error))callback;
+-(void)getCategoriesWithCallback:(GRCompletionBlockGet)callback;
+-(void)searchProductsForText:(NSString*)queryText callback:(GRCompletionBlockGet)callback;
+
+-(void)addToCart:(NSDictionary*)item callback:(GRCompletionBlockPost)callback;
 
 @end

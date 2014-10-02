@@ -8,6 +8,7 @@
 
 #import "GRHomeViewController.h"
 #import "GRContainerTableViewCell.h"
+#import "GRItemDetailViewController.h"
 
 @interface GRHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -145,6 +146,8 @@
     NSDictionary* cellData = [notification object];
     if (cellData) {
         DLog(@"Selected: %@", cellData);
+        GRItemDetailViewController* detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRItemDetailViewController"];
+        [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
 

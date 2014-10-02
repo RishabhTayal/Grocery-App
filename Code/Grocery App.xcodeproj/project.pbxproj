@@ -26,6 +26,7 @@
 		064F8F4F19D8A09900291398 /* GRWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F4E19D8A09900291398 /* GRWebService.m */; };
 		064F8F5419D9AB0100291398 /* GRContainerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F5319D9AB0100291398 /* GRContainerTableViewCell.m */; };
 		064F8F5719D9ABA400291398 /* GRArticleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F5619D9ABA400291398 /* GRArticleCollectionViewCell.m */; };
+		064F8F5B19D9F81400291398 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 064F8F5A19D9F81400291398 /* Customer.m */; };
 		0690D62019D33D8B007964A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D61F19D33D8B007964A7 /* main.m */; };
 		0690D62319D33D8B007964A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62219D33D8B007964A7 /* AppDelegate.m */; };
 		0690D62619D33D8B007964A7 /* GRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D62519D33D8B007964A7 /* GRHomeViewController.m */; };
@@ -72,6 +73,8 @@
 		064F8F5319D9AB0100291398 /* GRContainerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRContainerTableViewCell.m; sourceTree = "<group>"; };
 		064F8F5519D9ABA400291398 /* GRArticleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRArticleCollectionViewCell.h; sourceTree = "<group>"; };
 		064F8F5619D9ABA400291398 /* GRArticleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRArticleCollectionViewCell.m; sourceTree = "<group>"; };
+		064F8F5919D9F81400291398 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		064F8F5A19D9F81400291398 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		0690D61A19D33D8B007964A7 /* Grocery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0690D61E19D33D8B007964A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0690D61F19D33D8B007964A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				064F8F2419D5DF8100291398 /* Model.xcdatamodeld */,
+				064F8F5919D9F81400291398 /* Customer.h */,
+				064F8F5A19D9F81400291398 /* Customer.m */,
 				064F8F2719D5E00400291398 /* Cart.h */,
 				064F8F2819D5E00400291398 /* Cart.m */,
 			);
@@ -462,6 +467,7 @@
 				064F8F5719D9ABA400291398 /* GRArticleCollectionViewCell.m in Sources */,
 				064F8F1A19D5C4DF00291398 /* GRItemDetailViewController.m in Sources */,
 				064F8F4919D7BC7A00291398 /* GROrderHistoryViewController.m in Sources */,
+				064F8F5B19D9F81400291398 /* Customer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +619,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bb7cb758-b8ca-40cc-9296-fef2e06e7f8d";
+				PROVISIONING_PROFILE = "0f4706b8-3dbf-4868-b1c6-3581f3d35bdb";
 			};
 			name = Debug;
 		};
