@@ -29,7 +29,6 @@
     if (!_datasource) {
         GRWebService* caller = [[GRWebService alloc] init];
         [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
-            DLog(@"%@", result);
             _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"category"]];
             [self.tableView reloadData];
         }];

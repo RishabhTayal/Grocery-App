@@ -29,6 +29,7 @@
 //        _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"category"]];
 //        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 //    }];
+   NSLog(@"UUID: %@", [[NSUUID UUID] UUIDString]);
     
     self.datasource = @[ @{ @"description": @"Section A",
                             @"articles": @[ @{ @"title": @"Article A1" },
@@ -81,7 +82,7 @@
                          ];
     
 
-    DLog(@"%@", _datasource);
+//    DLog(@"%@", _datasource);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectItemFromCollectionView:) name:@"didSelectItemFromCollectionView" object:nil];
     // Do any additional setup after loading the view, typically from a nib.
