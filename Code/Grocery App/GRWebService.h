@@ -16,6 +16,7 @@ typedef void (^GRCompletionBlockPost)(id result, NSError* error);
 -(void)getCategoriesWithCallback:(GRCompletionBlockGet)callback;
 -(void)searchProductsForText:(NSString*)queryText callback:(GRCompletionBlockGet)callback;
 
+//-(void)createCartcallBack:(GRCompletionBlockPost)callback;
 -(void)addToCart:(NSDictionary*)item callback:(GRCompletionBlockPost)callback;
 
 @end

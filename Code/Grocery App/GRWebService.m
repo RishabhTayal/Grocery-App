@@ -13,31 +13,42 @@
 
 -(void)getCategoriesWithCallback:(GRCompletionBlockGet)callback
 {
-    [self sendGetRequestURL:[NSString stringWithFormat:@"%@%@", kWSURLBase, kWSURLCategories] completion:callback];
+    [self sendGetRequestURL:kWSURLCategories completion:callback];
 }
 
 -(void)searchProductsForText:(NSString*)queryText callback:(GRCompletionBlockGet)callback
 {
-    NSString* urlString = [NSString stringWithFormat:@"%@%@?q=%@", kWSURLBase, kWSURLSearchProducts, queryText];
+    NSString * urlString = [NSString stringWithFormat:kWSURLSearchProducts, queryText];
     [self sendGetRequestURL:urlString completion:callback];
 }
+
+//-(void)createCartcallBack:(GRCompletionBlockPost)callback
+//{
+//}
 
 -(void)addToCart:(NSDictionary *)item callback:(GRCompletionBlockPost)callback
 {
     Customer* cust = [Customer MR_findFirst];
     NSMutableDictionary* dict;
-    if (cust != nil) {
+    if (cust == nil) {
         DLog(@"%@", cust);
+        
+        //Create new cart
         dict = [NSMutableDictionary dictionaryWithDictionary:@{@"customer" : @{@"id": cust.customerId}, @"id": cust.cartId}];
+        [self sendPostRequestURL:kWSURLCreateCart postDict:dict completion:^(id result, NSError *error) {
+            if (cust == nil) {
+                Customer* newCustomer = [Customer MR_createEntity];
+                newCustomer.customerId = [NSString stringWithFormat:@"%@", result[@"customer"][@"id"]];
+                newCustomer.cartId = [NSString stringWithFormat:@"%@", result[@"id"]];
+                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
+            }
+            callback(result, error);
+        }];
     }
-    
-    [self sendPostRequestURL:[NSString stringWithFormat:@"%@%@", kWSURLBase, kWSURLAddToCart] postDict:dict completion:^(id result, NSError *error) {
-        if (cust == nil) {
-            Customer* newCustomer = [Customer MR_createEntity];
-            newCustomer.customerId = [NSString stringWithFormat:@"%@", result[@"customer"][@"id"]];
-            newCustomer.cartId = [NSString stringWithFormat:@"%@", result[@"id"]];
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
-        }
+
+    //Add Item to cart
+    dict = [NSMutableDictionary dictionaryWithDictionary:@{@"customer" : @{@"id": cust.customerId}, @"id": cust.cartId}];
+    [self sendPostRequestURL:[NSString stringWithFormat:kWSURLAddToCart, @"", @"", @""] postDict:dict completion:^(id result, NSError *error) {
         callback(result, error);
     }];
 }
@@ -63,7 +74,7 @@
     request.HTTPMethod = @"POST";
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[self dictToJSON:postDict]];
-
+    
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         DLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
         id resultJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
