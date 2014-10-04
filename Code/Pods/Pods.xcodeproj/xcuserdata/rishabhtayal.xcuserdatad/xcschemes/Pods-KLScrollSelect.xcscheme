@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FD63C8334C55492EA0BB327A"
+               BlueprintIdentifier = "5789686C4EC9434996618D39"
                BuildableName = "libPods-KLScrollSelect.a"
                BlueprintName = "Pods-KLScrollSelect"
                ReferencedContainer = "container:Pods.xcodeproj">
