@@ -14,6 +14,7 @@
 -(void)getCategoriesWithCallback:(GRCompletionBlockGet)callback
 {
     [self sendGetRequestURL:kWSURLCategories completion:callback];
+    
 }
 
 -(void)searchProductsForText:(NSString*)queryText callback:(GRCompletionBlockGet)callback
