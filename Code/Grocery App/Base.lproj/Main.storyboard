@@ -273,10 +273,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXB-xz-hN2" id="Tre-EI-eCu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-3L-6xQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-3L-6xQ">
                                                     <rect key="frame" x="140" y="0.0" width="320" height="199"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="199" id="28T-Vo-rLc"/>
+                                                        <constraint firstAttribute="width" constant="320" id="Jkd-aV-4vg"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rGk-3L-6xQ" firstAttribute="top" secondItem="Tre-EI-eCu" secondAttribute="topMargin" constant="-8" id="UNR-iL-4TR"/>
+                                                <constraint firstAttribute="centerX" secondItem="rGk-3L-6xQ" secondAttribute="centerX" id="Yz3-qP-aTw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -308,19 +316,28 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XJl-AB-hWD">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XJl-AB-hWD">
                                                     <rect key="frame" x="498" y="9" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="stepperChanged:" destination="VlY-c7-c9O" eventType="valueChanged" id="Jd3-hE-pOP"/>
                                                     </connections>
                                                 </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUC-yS-fEz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUC-yS-fEz">
                                                     <rect key="frame" x="448" y="13" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="7yG-jU-7TC"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RUC-yS-fEz" firstAttribute="centerY" secondItem="XJl-AB-hWD" secondAttribute="centerY" id="5yq-ed-DJH"/>
+                                                <constraint firstItem="XJl-AB-hWD" firstAttribute="trailing" secondItem="Ec0-vt-a6O" secondAttribute="trailingMargin" id="pqT-Am-NeW"/>
+                                                <constraint firstItem="XJl-AB-hWD" firstAttribute="leading" secondItem="RUC-yS-fEz" secondAttribute="trailing" constant="8" id="qTe-hH-wrg"/>
+                                                <constraint firstAttribute="centerY" secondItem="XJl-AB-hWD" secondAttribute="centerY" constant="-2" id="tCB-AF-Bod"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZlD-yk-whF">
