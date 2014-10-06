@@ -13,33 +13,30 @@
 
 -(void)getCategoriesWithCallback:(GRCompletionBlockGet)callback
 {
-    [self sendGetRequestURL:kWSURLCategories getDict:nil completion:callback];
-    
+    [self sendGetRequestURL:kWSURLCategories httpBody:nil httpHeader:nil completion:callback];
 }
 
 -(void)getProdctsForCategory:(NSString*)categoryId callback:(GRCompletionBlockGet)callback
 {
     NSString* urlString = [NSString stringWithFormat:kWSURLGetProductsForCategory, categoryId, @"a"];
-    [self sendGetRequestURL:urlString getDict:nil completion:callback];
+    [self sendGetRequestURL:urlString httpBody:nil httpHeader:nil completion:callback];
 }
 
 -(void)getProductInfo:(NSString*)productId callback:(GRCompletionBlockGet)callback
 {
     NSString* url = [NSString stringWithFormat:kWSURLGetProductInfo, productId];
-    [self sendGetRequestURL:url getDict:nil completion:callback];
+    [self sendGetRequestURL:url httpBody:nil httpHeader:nil completion:callback];
 }
 
 -(void)searchProductsForText:(NSString*)queryText callback:(GRCompletionBlockGet)callback
 {
     NSString * urlString = [NSString stringWithFormat:kWSURLSearchProducts, queryText];
-    [self sendGetRequestURL:urlString getDict:nil completion:callback];
+    [self sendGetRequestURL:urlString httpBody:nil httpHeader:nil completion:callback];
 }
 
 -(void)createCartcallBack:(GRCompletionBlockPost)callback
 {
-    
-    [self sendPostRequestURL:kWSURLCreateCart postDict:nil completion:callback];
-    
+    [self sendPostRequestURL:kWSURLCreateCart httpBody:nil httpHeader:nil completion:callback];
 }
 
 -(void)addToCartCategory:(NSString*)category productId:(NSString*)productId skuId:(NSString*)skuId callback:(GRCompletionBlockPost)callback
@@ -48,10 +45,8 @@
     NSMutableDictionary* dict;
    
     //Add Item to cart
-    dict = [NSMutableDictionary dictionaryWithDictionary:@{@"customer" : @{@"id": cust.customerId}, @"id": cust.cartId}];
-    [self sendPostRequestURL:[NSString stringWithFormat:kWSURLAddToCart, category, productId, skuId] postDict:dict completion:^(id result, NSError *error) {
-        callback(result, error);
-    }];
+    dict = [NSMutableDictionary dictionaryWithDictionary:@{@"customerId" : cust.customerId}];
+    [self sendPostRequestURL:[NSString stringWithFormat:kWSURLAddToCart, productId,category] httpBody:nil httpHeader:dict completion:callback];
 }
 
 -(void)getCartWithCallback:(GRCompletionBlockGet)callback
@@ -59,17 +54,27 @@
     NSString* url = kWSURLGetCart;
     Customer* cust = [Customer MR_findFirst];
     NSDictionary* params = @{@"customerId": cust.customerId};
-    [self sendGetRequestURL:url getDict:params completion:callback];
+    [self sendGetRequestURL:url httpBody:nil httpHeader:params completion:callback];
+}
+
+-(void)getMediaListForProduct:(NSString*)productId callback:(GRCompletionBlockGet)callback
+{
+    [self sendGetRequestURL:[NSString stringWithFormat:kWSURLGetMediaList, productId] httpBody:nil httpHeader:nil completion:callback];
 }
 
 #pragma mark - Internal Methods
 
--(void)sendGetRequestURL:(NSString*)urlString getDict:(id)getDict completion:(GRCompletionBlockGet)completion
+-(void)sendGetRequestURL:(NSString*)urlString httpBody:(id)httpBody httpHeader:(id)httpHeader completion:(GRCompletionBlockGet)completion
 {
     NSURL* url = [NSURL URLWithString:urlString];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
-    if (getDict != nil) {
-        [request setHTTPBody:[self dictToJSON:getDict]];
+    if (httpBody != nil) {
+        [request setHTTPBody:[self dictToJSON:httpBody]];
+    }
+    if (httpHeader) {
+        for (NSString* key in httpHeader) {
+            [request addValue:httpHeader[key] forHTTPHeaderField:key];
+        }
     }
     request.HTTPMethod = @"GET";
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -84,18 +89,23 @@
     }];
 }
 
--(void)sendPostRequestURL:(NSString*)urlString postDict:(id)postDict completion:(GRCompletionBlockPost)completion
+-(void)sendPostRequestURL:(NSString*)urlString httpBody:(id)httpBody httpHeader:(id)httpHeader completion:(GRCompletionBlockPost)completion
 {
     NSURL* url = [NSURL URLWithString:urlString];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.HTTPMethod = @"POST";
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    if (postDict) {
-        [request setHTTPBody:[self dictToJSON:postDict]];
+    if (httpBody) {
+        [request setHTTPBody:[self dictToJSON:httpBody]];
     }
     
+    if (httpHeader) {
+        for (NSString* key in httpHeader) {
+            [request addValue:httpHeader[key] forHTTPHeaderField:key];
+        }
+    }
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        DLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+//        DLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         id resultJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(resultJSON, connectionError);

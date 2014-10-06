@@ -42,8 +42,9 @@
 #define kWSURLGetProductsForCategory [NSString stringWithFormat:@"%@%@", kWSURLBase, @"catalog/search/category/%@/products?q=%@"]
 #define kWSURLGetProductInfo [NSString stringWithFormat:@"%@%@", kWSURLBase, @"catalog/product/%@"]
 #define kWSURLSearchProducts [NSString stringWithFormat:@"%@%@", kWSURLBase, @"catalog/search/products?q=%@"]
-#define kWSURLAddToCart [NSString stringWithFormat:@"%@%@", kWSURLBase, @"cart/%@/%@/%@"]
+#define kWSURLAddToCart [NSString stringWithFormat:@"%@%@", kWSURLBase, @"cart/%@/?categoryId=%@"]
 #define kWSURLCreateCart [NSString stringWithFormat:@"%@%@", kWSURLBase,@"cart"]
 #define kWSURLGetCart [NSString stringWithFormat:@"%@%@", kWSURLBase, @"cart"]
+#define kWSURLGetMediaList [NSString stringWithFormat:@"%@%@",kWSURLBase, @"catalog/product/%@/media"]
 
 #endif

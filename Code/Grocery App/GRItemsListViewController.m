@@ -29,7 +29,7 @@
     [caller getProdctsForCategory:_categoryId callback:^(id result, NSError *error) {
         _datasource = [NSMutableArray arrayWithArray:result[@"products"]];
         DLog(@"%@", self.datasource);
-        [self.tableView reloadData];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
     
     // Do any additional setup after loading the view.

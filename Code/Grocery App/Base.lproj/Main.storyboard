@@ -191,11 +191,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PvF-mQ-voX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aeo-bU-7KO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-lH-0VR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="iB4-m9-Fj3" customClass="GRItemTableViewCell">
@@ -243,12 +243,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YuG-lH-0VR" firstAttribute="top" secondItem="B84-kg-Nho" secondAttribute="bottom" constant="-20" id="L0x-aM-sfP"/>
+                            <constraint firstItem="YuG-lH-0VR" firstAttribute="top" secondItem="B84-kg-Nho" secondAttribute="bottom" id="L0x-aM-sfP"/>
                             <constraint firstAttribute="height" secondItem="YuG-lH-0VR" secondAttribute="height" id="XNd-hD-lfI"/>
                             <constraint firstItem="YuG-lH-0VR" firstAttribute="leading" secondItem="aeo-bU-7KO" secondAttribute="leadingMargin" constant="-16" id="eUN-VP-JCX"/>
                             <constraint firstAttribute="width" secondItem="YuG-lH-0VR" secondAttribute="width" id="wZ1-gd-jJh"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="YuG-lH-0VR" id="adI-3p-6aa"/>
                     </connections>
@@ -262,7 +263,7 @@
             <objects>
                 <tableViewController restorationIdentifier="GRItemDetailViewController" storyboardIdentifier="GRItemDetailViewController" hidesBottomBarWhenPushed="YES" id="VlY-c7-c9O" customClass="GRItemDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BRD-A8-QR5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>

@@ -12,6 +12,8 @@
 #import "GRCartItemTableViewCell.h"
 #import "GRCheckoutViewController.h"
 #import "GRTabViewController.h"
+#import <AFNetworking/AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
 
 @interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -19,6 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel* totalPriceLabel;
 
 @property (nonatomic, strong) NSMutableArray* datasource;
+@property (nonatomic, strong) NSMutableDictionary* cartDict;
 
 @end
 
@@ -39,16 +42,20 @@
 {
     [super viewDidAppear:animated];
     
-    _datasource = [NSMutableArray arrayWithArray:[Cart MR_findAll]];
-    
-    if (_datasource.count != 0) {
-        self.navigationItem.leftBarButtonItem = self.editButtonItem;
-        self.navigationItem.rightBarButtonItem.enabled = YES;
-    } else {
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-    }
-    
-    [self.tableView reloadData];
+    GRWebService* caller = [[GRWebService alloc] init];
+    [caller getCartWithCallback:^(id result, NSError *error) {
+        _cartDict = [NSMutableDictionary dictionaryWithDictionary:result];
+        _datasource = [NSMutableArray arrayWithArray:result[@"orderItems"]];
+        
+        if (_datasource.count != 0) {
+            self.navigationItem.leftBarButtonItem = self.editButtonItem;
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+        } else {
+            self.navigationItem.rightBarButtonItem.enabled = NO;
+        }
+        
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,11 +93,11 @@
         return nil;
     }
     UIView* footerView = [[NSBundle mainBundle] loadNibNamed:@"GRCartFooterView" owner:self options:nil][0];
-    float totalPrice = 0.0;
-    for (Cart* item in _datasource) {
-        totalPrice = totalPrice + ([item.price floatValue] * [item.quantity integerValue]);
-    }
-    _totalPriceLabel.text = [NSString stringWithFormat:@"%f", totalPrice];
+//    float totalPrice = 0.0;
+//    for (Cart* item in _datasource) {
+//        totalPrice = totalPrice + ([item.price floatValue] * [item.quantity integerValue]);
+//    }
+    _totalPriceLabel.text = self.cartDict[@"total"][@"amount"];
     return footerView;
 }
 
@@ -113,11 +120,20 @@
 
 - (void)configureCell:(GRCartItemTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Cart* item = _datasource[indexPath.row];
+//    Cart* item = _datasource[indexPath.row];
+
+    GRWebService* caller = [[GRWebService alloc] init];
+    [caller getMediaListForProduct:self.datasource[indexPath.row][@"productId"] callback:^(id result, NSError *error) {
+        DLog(@"%@", result);
+        
+
+    }];
+    cell.itemNameLabel.text = self.datasource[indexPath.row][@"name"];
+    cell.quantityLabel.text = [NSString stringWithFormat:@"%@", self.datasource[indexPath.row][@"quantity"]];
     
-    cell.itemImageView.image = [UIImage imageNamed:@"sev"];
-    cell.itemNameLabel.text = item.title;
-    cell.quantityLabel.text = [NSString stringWithFormat:@"%@", item.quantity];
+//    cell.itemImageView.image = [UIImage imageNamed:@"sev"];
+//    cell.itemNameLabel.text = item.title;
+//    cell.quantityLabel.text = [NSString stringWithFormat:@"%@", item.quantity];
 }
 
 #pragma mark - UITableView Edititing
@@ -133,17 +149,17 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Cart* item = _datasource[indexPath.row];
-        [item MR_deleteEntity];
-        
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-            [((GRTabViewController*)self.tabBarController) cartUpdated];
-        }];
+//        Cart* item = _datasource[indexPath.row];
+//        [item MR_deleteEntity];
+//        
+//        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+//            [((GRTabViewController*)self.tabBarController) cartUpdated];
+//        }];
         
         [_datasource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-//        [((GRTabViewController*)self.tabBarController) removeFromCart];
+        //        [((GRTabViewController*)self.tabBarController) removeFromCart];
         
         
         if (_datasource.count == 0) {

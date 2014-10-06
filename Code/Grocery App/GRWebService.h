@@ -21,5 +21,6 @@ typedef void (^GRCompletionBlockPost)(id result, NSError* error);
 -(void)createCartcallBack:(GRCompletionBlockPost)callback;
 -(void)addToCartCategory:(NSString*)category productId:(NSString*)productId skuId:(NSString*)skuId callback:(GRCompletionBlockPost)callback;
 -(void)getCartWithCallback:(GRCompletionBlockGet)callback;
+-(void)getMediaListForProduct:(NSString*)productId callback:(GRCompletionBlockGet)callback;
 
 @end

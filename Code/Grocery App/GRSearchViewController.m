@@ -30,7 +30,7 @@
         GRWebService* caller = [[GRWebService alloc] init];
         [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
             _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"category"]];
-            [self.tableView reloadData];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         }];
     }
 }
@@ -106,13 +106,13 @@
     if (searchText.length == 0) {
         [caller getCategoriesWithCallback:^(NSArray *result, NSError *error) {
             _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"category"]];
-            [self.tableView reloadData];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         }];
     } else {
         
         [caller searchProductsForText:searchText callback:^(NSArray *result, NSError *error) {
             _datasource = [NSMutableArray arrayWithArray:[result valueForKey:@"products"]];
-            [self.tableView reloadData];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         }];
     }
 }
