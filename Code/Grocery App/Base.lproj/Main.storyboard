@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -401,7 +402,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bfH-KU-nrt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bfH-KU-nrt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -448,6 +449,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bfH-KU-nrt" firstAttribute="height" secondItem="H1u-uC-Zlv" secondAttribute="height" id="ham-Ga-9vN"/>
+                            <constraint firstItem="bfH-KU-nrt" firstAttribute="leading" secondItem="H1u-uC-Zlv" secondAttribute="leadingMargin" constant="-16" id="qfX-Un-c2j"/>
+                            <constraint firstItem="bfH-KU-nrt" firstAttribute="top" secondItem="N72-W0-dEU" secondAttribute="bottom" constant="-64" id="sa9-zi-g6a"/>
+                            <constraint firstItem="bfH-KU-nrt" firstAttribute="width" secondItem="H1u-uC-Zlv" secondAttribute="width" id="zjM-sz-rXG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="first" id="CNg-YQ-tNC"/>
                     <navigationItem key="navigationItem" title="Cart" id="Trp-5Z-32R">
