@@ -93,6 +93,7 @@
         return nil;
     }
     UIView* footerView = [[NSBundle mainBundle] loadNibNamed:@"GRCartFooterView" owner:self options:nil][0];
+    footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, footerView.frame.size.height);
 //    float totalPrice = 0.0;
 //    for (Cart* item in _datasource) {
 //        totalPrice = totalPrice + ([item.price floatValue] * [item.quantity integerValue]);

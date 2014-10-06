@@ -12,44 +12,74 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="577" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95C-Js-0BT">
-                    <rect key="frame" x="139" y="10" width="75" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swJ-dG-bII">
-                    <rect key="frame" x="238" y="10" width="74" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20k-bf-eQ9">
-                    <rect key="frame" x="214" y="69" width="98" height="21"/>
+                    <rect key="frame" x="8" y="10" width="115" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shipping &amp; Tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDD-fQ-p4A">
-                    <rect key="frame" x="99" y="39" width="115" height="21"/>
+                    <rect key="frame" x="8" y="39" width="115" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYp-M4-Zr9">
-                    <rect key="frame" x="257" y="39" width="55" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_panel_shadow_1px_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="Q1B-KC-MXm">
+                    <rect key="frame" x="0.0" y="0.0" width="577" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="9or-IR-T44"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swJ-dG-bII">
+                    <rect key="frame" x="495" y="10" width="74" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="Gyc-Za-DBg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20k-bf-eQ9">
+                    <rect key="frame" x="471" y="69" width="98" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="98" id="hHT-FL-mqc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYp-M4-Zr9">
+                    <rect key="frame" x="514" y="39" width="55" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="Nev-BN-yWc"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Q1B-KC-MXm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9hD-UE-gv6"/>
+                <constraint firstItem="swJ-dG-bII" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Fph-JY-EHl"/>
+                <constraint firstAttribute="trailing" secondItem="Q1B-KC-MXm" secondAttribute="trailing" id="GcI-XP-ST5"/>
+                <constraint firstAttribute="centerY" secondItem="iYp-M4-Zr9" secondAttribute="centerY" constant="0.5" id="P45-PQ-wWg"/>
+                <constraint firstAttribute="trailing" secondItem="swJ-dG-bII" secondAttribute="trailing" constant="8" id="Yu1-nB-OMi"/>
+                <constraint firstAttribute="bottom" secondItem="20k-bf-eQ9" secondAttribute="bottom" constant="10" id="bbG-wI-itv"/>
+                <constraint firstAttribute="trailing" secondItem="20k-bf-eQ9" secondAttribute="trailing" constant="8" id="oPi-XG-Wvv"/>
+                <constraint firstAttribute="trailing" secondItem="iYp-M4-Zr9" secondAttribute="trailing" constant="8" id="t9f-mH-6XK"/>
+                <constraint firstItem="Q1B-KC-MXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vtN-00-JBF"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="145.5" y="-63"/>
         </view>
     </objects>
+    <resources>
+        <image name="left_panel_shadow_1px_inverted" width="1" height="1"/>
+    </resources>
 </document>
