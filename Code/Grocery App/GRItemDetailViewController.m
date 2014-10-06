@@ -22,6 +22,7 @@
 @property (nonatomic, strong) IBOutlet UILabel* priceLabel;
 
 //@property (nonatomic, strong) NSMutableArray* datasource;
+@property (nonatomic, strong) NSMutableDictionary* productDict;
 
 - (IBAction)stepperChanged:(UIStepper*)sender;
 
@@ -34,17 +35,21 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addToCartClicked:)];
     
-    DLog(@"%@", self.productDict);
-    
-    AFImageResponseSerializer* serializer = [[AFImageResponseSerializer alloc] init];
-    serializer.acceptableContentTypes = [serializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
-    self.mainIV.imageResponseSerializer = serializer;
-    
-    [self.mainIV setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kProductImageUrlPrefix, self.productDict[@"primaryMedia"][@"url"]]]];
-    
-    self.titleLabel.text = self.productDict[@"name"];
-    self.productDescLabel.text = self.productDict[@"longDescription"];
-    self.priceLabel.text = self.productDict[@"retailPrice"][@"amount"];
+   
+    GRWebService* caller = [[GRWebService alloc] init];
+    [caller getProductInfo:self.productId callback:^(id result, NSError *error) {
+        
+        self.productDict = [NSMutableDictionary dictionaryWithDictionary:result];
+        AFImageResponseSerializer* serializer = [[AFImageResponseSerializer alloc] init];
+        serializer.acceptableContentTypes = [serializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
+        self.mainIV.imageResponseSerializer = serializer;
+        
+        [self.mainIV setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kProductImageUrlPrefix, self.productDict[@"primaryMedia"][@"url"]]]];
+        
+        self.titleLabel.text = self.productDict[@"name"];
+        self.productDescLabel.text = self.productDict[@"longDescription"];
+        self.priceLabel.text = self.productDict[@"retailPrice"][@"amount"];
+    }];
     // Do any additional setup after loading the view.
 }
 
@@ -55,21 +60,24 @@
 
 -(void)addToCartClicked:(id)sender
 {
-    Cart* cart = [Cart MR_createEntity];
-    cart.title = _titleLabel.text;
-    cart.price = [self.productDict objectForKey:@"retailPrice"][@"amount"];
-    cart.quantity = [NSNumber numberWithDouble:self.quantityStepper.value];
-
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-        self.navigationItem.rightBarButtonItem.title = @"Added to cart";
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-        
-        [((GRTabViewController*)self.tabBarController) cartUpdated];
-    }];
+    //    Cart* cart = [Cart MR_createEntity];
+    //    cart.title = _titleLabel.text;
+    //    NSNumberFormatter* f = [[NSNumberFormatter alloc] init];
+    //    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    //    cart.price =  [f numberFromString:[self.productDict objectForKey:@"retailPrice"][@"amount"]];
+    //    cart.quantity = [NSNumber numberWithDouble:self.quantityStepper.value];
+    //
+    //    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+    //        self.navigationItem.rightBarButtonItem.title = @"Added to cart";
+    //        self.navigationItem.rightBarButtonItem.enabled = NO;
+    //
+    //        [((GRTabViewController*)self.tabBarController) cartUpdated];
+    //    }];
     
     GRWebService* caller = [[GRWebService alloc] init];
-    [caller addToCart:nil callback:^(id result, NSError *error) {
-          DLog(@"%@", result);
+    //TODO:Replace with Skuid
+    [caller addToCartCategory:self.categoryId productId:self.productDict[@"id"] skuId:self.productDict[@"id"] callback:^(id result, NSError *error) {
+        DLog(@"%@", result);
     }];
 }
 

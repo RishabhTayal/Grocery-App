@@ -10,6 +10,7 @@
 
 @interface GRItemDetailViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableDictionary* productDict;
+@property (nonatomic, strong) NSString* productId;
+@property (nonatomic, strong) NSString* categoryId;
 
 @end

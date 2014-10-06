@@ -23,6 +23,12 @@
     [self sendGetRequestURL:urlString getDict:nil completion:callback];
 }
 
+-(void)getProductInfo:(NSString*)productId callback:(GRCompletionBlockGet)callback
+{
+    NSString* url = [NSString stringWithFormat:kWSURLGetProductInfo, productId];
+    [self sendGetRequestURL:url getDict:nil completion:callback];
+}
+
 -(void)searchProductsForText:(NSString*)queryText callback:(GRCompletionBlockGet)callback
 {
     NSString * urlString = [NSString stringWithFormat:kWSURLSearchProducts, queryText];
@@ -36,14 +42,14 @@
     
 }
 
--(void)addToCart:(NSDictionary *)item callback:(GRCompletionBlockPost)callback
+-(void)addToCartCategory:(NSString*)category productId:(NSString*)productId skuId:(NSString*)skuId callback:(GRCompletionBlockPost)callback
 {
     Customer* cust = [Customer MR_findFirst];
     NSMutableDictionary* dict;
    
     //Add Item to cart
     dict = [NSMutableDictionary dictionaryWithDictionary:@{@"customer" : @{@"id": cust.customerId}, @"id": cust.cartId}];
-    [self sendPostRequestURL:[NSString stringWithFormat:kWSURLAddToCart, @"", @"", @""] postDict:nil completion:^(id result, NSError *error) {
+    [self sendPostRequestURL:[NSString stringWithFormat:kWSURLAddToCart, category, productId, skuId] postDict:dict completion:^(id result, NSError *error) {
         callback(result, error);
     }];
 }
@@ -89,7 +95,7 @@
     }
     
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        DLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
+        DLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         id resultJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(resultJSON, connectionError);

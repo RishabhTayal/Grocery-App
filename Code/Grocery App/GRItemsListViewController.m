@@ -28,6 +28,7 @@
     GRWebService* caller = [[GRWebService alloc] init];
     [caller getProdctsForCategory:_categoryId callback:^(id result, NSError *error) {
         _datasource = [NSMutableArray arrayWithArray:result[@"products"]];
+        DLog(@"%@", self.datasource);
         [self.tableView reloadData];
     }];
     
@@ -85,7 +86,9 @@
     if ([segue.destinationViewController isKindOfClass:[GRItemDetailViewController class]]) {
         GRItemDetailViewController* itemDetail = segue.destinationViewController;
         NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
-        itemDetail.productDict = _datasource[indexPath.row];
+//        itemDetail.productDict = _datasource[indexPath.row];
+        itemDetail.productId = self.datasource[indexPath.row][@"id"];
+        itemDetail.categoryId = self.categoryId;
     }
 }
 

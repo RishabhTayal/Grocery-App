@@ -673,7 +673,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c5327823-f515-4ca6-907c-aa21537b094e";
+				PROVISIONING_PROFILE = "c586a919-b61d-4c2a-9d2a-06ea745a1d88";
 			};
 			name = Release;
 		};
