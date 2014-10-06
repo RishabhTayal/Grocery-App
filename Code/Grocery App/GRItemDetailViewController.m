@@ -9,6 +9,8 @@
 #import "GRItemDetailViewController.h"
 #import "Cart.h"
 #import "GRTabViewController.h"
+#import <UIImageView+AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface GRItemDetailViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -16,8 +18,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIStepper *quantityStepper;
 @property (strong, nonatomic) IBOutlet UILabel *quantityLabel;
+@property (nonatomic, strong) IBOutlet UILabel* productDescLabel;;
+@property (nonatomic, strong) IBOutlet UILabel* priceLabel;
 
-@property (nonatomic, strong) NSMutableArray* datasource;
+//@property (nonatomic, strong) NSMutableArray* datasource;
 
 - (IBAction)stepperChanged:(UIStepper*)sender;
 
@@ -30,8 +34,17 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addToCartClicked:)];
     
-    self.mainIV.image = [UIImage imageNamed:@"sev"];
-    self.titleLabel.text = @"Sev";
+    DLog(@"%@", self.productDict);
+    
+    AFImageResponseSerializer* serializer = [[AFImageResponseSerializer alloc] init];
+    serializer.acceptableContentTypes = [serializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
+    self.mainIV.imageResponseSerializer = serializer;
+    
+    [self.mainIV setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kProductImageUrlPrefix, self.productDict[@"primaryMedia"][@"url"]]]];
+    
+    self.titleLabel.text = self.productDict[@"name"];
+    self.productDescLabel.text = self.productDict[@"longDescription"];
+    self.priceLabel.text = self.productDict[@"retailPrice"][@"amount"];
     // Do any additional setup after loading the view.
 }
 
@@ -44,7 +57,7 @@
 {
     Cart* cart = [Cart MR_createEntity];
     cart.title = _titleLabel.text;
-    cart.price = [NSNumber numberWithFloat:4.99];
+    cart.price = [self.productDict objectForKey:@"retailPrice"][@"amount"];
     cart.quantity = [NSNumber numberWithDouble:self.quantityStepper.value];
 
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
@@ -56,7 +69,7 @@
     
     GRWebService* caller = [[GRWebService alloc] init];
     [caller addToCart:nil callback:^(id result, NSError *error) {
-//          DLog(@"%@", result);
+          DLog(@"%@", result);
     }];
 }
 

@@ -10,6 +10,7 @@
 #import "GRItemTableViewCell.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFNetworking.h>
+#import "GRItemDetailViewController.h"
 
 @interface GRItemsListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -77,6 +78,15 @@
     [cell.productIV setImageWithURL:[NSURL URLWithString:imageurl]];
     cell.productName.text = _datasource[indexPath.row][@"name"];
     cell.priceLabel.text = _datasource[indexPath.row][@"retailPrice"][@"amount"];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[GRItemDetailViewController class]]) {
+        GRItemDetailViewController* itemDetail = segue.destinationViewController;
+        NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
+        itemDetail.productDict = _datasource[indexPath.row];
+    }
 }
 
 @end
