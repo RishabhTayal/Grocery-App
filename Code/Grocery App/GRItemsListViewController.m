@@ -8,6 +8,8 @@
 
 #import "GRItemsListViewController.h"
 #import "GRItemTableViewCell.h"
+#import <UIImageView+AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface GRItemsListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -22,8 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _datasource = [NSMutableArray new];
-    [_datasource addObject:@"a"];
+    GRWebService* caller = [[GRWebService alloc] init];
+    [caller getProdctsForCategory:_categoryId callback:^(id result, NSError *error) {
+        _datasource = [NSMutableArray arrayWithArray:result[@"products"]];
+        [self.tableView reloadData];
+    }];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -60,9 +66,17 @@
 
 - (void)configureCell:(GRItemTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.productIV.image = [UIImage imageNamed:@"sev"];
-    cell.productName.text = @"Sev";
-    cell.priceLabel.text = @"$4.99";
+    NSString* imageurl = [NSString stringWithFormat:@"%@%@", kProductImageUrlPrefix, _datasource[indexPath.row][@"primaryMedia"][@"url"]];
+    DLog(@"%@", imageurl);
+    
+    //Adding acceptable content type image/jpg to AFNetworking. AFNetworking, by default, doesn't support jpg
+    AFImageResponseSerializer* serializer = [[AFImageResponseSerializer alloc] init];
+    serializer.acceptableContentTypes = [serializer.acceptableContentTypes setByAddingObject:@"image/jpg"];
+    cell.productIV.imageResponseSerializer = serializer;
+    
+    [cell.productIV setImageWithURL:[NSURL URLWithString:imageurl]];
+    cell.productName.text = _datasource[indexPath.row][@"name"];
+    cell.priceLabel.text = _datasource[indexPath.row][@"retailPrice"][@"amount"];
 }
 
 @end

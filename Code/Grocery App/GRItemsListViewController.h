@@ -10,4 +10,6 @@
 
 @interface GRItemsListViewController : UIViewController
 
+@property (nonatomic, strong) NSString* categoryId;
+
 @end

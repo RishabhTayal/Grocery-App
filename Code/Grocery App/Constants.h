@@ -34,10 +34,15 @@
  *  Webservice API URL
  */
 
+#define kProductImageUrlPrefix @"http://sife-env.elasticbeanstalk.com"
+
 #define kWSURLBase @"http://sife-env.elasticbeanstalk.com/api/v1/"
 
 #define kWSURLCategories [NSString stringWithFormat:@"%@%@", kWSURLBase, @"catalog/categories"]
+#define kWSURLGetProductsForCategory [NSString stringWithFormat:@"%@%@", kWSURLBase, @"catalog/search/category/%@/products?q=%@"]
 #define kWSURLSearchProducts [NSString stringWithFormat:@"%@%@", kWSURLBase, @"catalog/search/products?q=%@"]
 #define kWSURLAddToCart [NSString stringWithFormat:@"%@%@", kWSURLBase, @"cart/%@/%@/%@"]
 #define kWSURLCreateCart [NSString stringWithFormat:@"%@%@", kWSURLBase,@"cart"]
+#define kWSURLGetCart [NSString stringWithFormat:@"%@%@", kWSURLBase, @"cart"]
+
 #endif

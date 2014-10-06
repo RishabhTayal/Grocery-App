@@ -46,8 +46,7 @@
     cart.title = _titleLabel.text;
     cart.price = [NSNumber numberWithFloat:4.99];
     cart.quantity = [NSNumber numberWithDouble:self.quantityStepper.value];
-//    cart.desc =
-//    cart.q
+
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         self.navigationItem.rightBarButtonItem.title = @"Added to cart";
         self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -59,8 +58,6 @@
     [caller addToCart:nil callback:^(id result, NSError *error) {
 //          DLog(@"%@", result);
     }];
-//    GRTabViewController* tabBar = (GRTabViewController*)self.tabBarController;
-//    [tabBar addedToCart];    
 }
 
 -(IBAction)stepperChanged:(UIStepper*)sender

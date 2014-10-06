@@ -8,7 +8,6 @@
 
 #import "Customer.h"
 
-
 @implementation Customer
 
 @dynamic customerId;

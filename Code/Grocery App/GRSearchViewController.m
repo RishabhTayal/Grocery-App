@@ -75,6 +75,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GRItemsListViewController* listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRItemsListViewController"];
+    DLog(@"%@", _datasource[indexPath.row]);
+    listVC.categoryId = _datasource[indexPath.row][@"id"];
     [self.navigationController pushViewController:listVC animated:YES];
     [self.searchBar resignFirstResponder];
 }
