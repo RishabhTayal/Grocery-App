@@ -130,10 +130,7 @@
     }];
     cell.itemNameLabel.text = self.datasource[indexPath.row][@"name"];
     cell.quantityLabel.text = [NSString stringWithFormat:@"%@", self.datasource[indexPath.row][@"quantity"]];
-    
-//    cell.itemImageView.image = [UIImage imageNamed:@"sev"];
-//    cell.itemNameLabel.text = item.title;
-//    cell.quantityLabel.text = [NSString stringWithFormat:@"%@", item.quantity];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@", self.datasource[indexPath.row][@"retailPrice"][@"amount"]];
 }
 
 #pragma mark - UITableView Edititing
