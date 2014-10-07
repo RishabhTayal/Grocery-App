@@ -44,6 +44,7 @@
 		06CCAB9A19E43BA100D86487 /* MyriadSetPro-text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06CCAB9419E43BA100D86487 /* MyriadSetPro-text.ttf */; };
 		06CCAB9B19E43BA100D86487 /* MyriadSetPro-thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06CCAB9519E43BA100D86487 /* MyriadSetPro-thin.ttf */; };
 		06CCAB9C19E43BA100D86487 /* MyriadSetPro-ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06CCAB9619E43BA100D86487 /* MyriadSetPro-ultralight.ttf */; };
+		06CCAB9F19E43C1200D86487 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CCAB9E19E43C1200D86487 /* Checkout.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		06CCAB9419E43BA100D86487 /* MyriadSetPro-text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadSetPro-text.ttf"; sourceTree = "<group>"; };
 		06CCAB9519E43BA100D86487 /* MyriadSetPro-thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadSetPro-thin.ttf"; sourceTree = "<group>"; };
 		06CCAB9619E43BA100D86487 /* MyriadSetPro-ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadSetPro-ultralight.ttf"; sourceTree = "<group>"; };
+		06CCAB9E19E43C1200D86487 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Checkout.storyboard; sourceTree = "<group>"; };
 		BE40B0DD46FC454995F84304 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E66478CB849448F78ED43114 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -205,7 +207,6 @@
 				0690D64719D33F37007964A7 /* GRCartViewController.m */,
 				064F8F4A19D7BF5A00291398 /* GRCartFooterView.xib */,
 				064F8F2D19D5E4FA00291398 /* EmptyCartView.xib */,
-				064F8F3919D5F83800291398 /* Checkout */,
 			);
 			name = "Cart Screen";
 			sourceTree = "<group>";
@@ -236,15 +237,6 @@
 				0690D65019D3580A007964A7 /* GRLoginViewController.m */,
 			);
 			name = "Login Screen";
-			sourceTree = "<group>";
-		};
-		064F8F3919D5F83800291398 /* Checkout */ = {
-			isa = PBXGroup;
-			children = (
-				064F8F3619D5F82200291398 /* GRCheckoutViewController.h */,
-				064F8F3719D5F82200291398 /* GRCheckoutViewController.m */,
-			);
-			name = Checkout;
 			sourceTree = "<group>";
 		};
 		064F8F4C19D8A06B00291398 /* Webservice */ = {
@@ -293,6 +285,7 @@
 				0690D62219D33D8B007964A7 /* AppDelegate.m */,
 				064F8F3419D5EF7F00291398 /* Home VC */,
 				064F8F1119D5C29100291398 /* Search VC */,
+				06CCAB9D19E43BEC00D86487 /* Checkout Screen */,
 				064F8F2F19D5E64D00291398 /* Cart Screen */,
 				064F8F2219D5DC0400291398 /* My Account */,
 				0690D62A19D33D8B007964A7 /* Main.storyboard */,
@@ -331,6 +324,16 @@
 				06CCAB9619E43BA100D86487 /* MyriadSetPro-ultralight.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		06CCAB9D19E43BEC00D86487 /* Checkout Screen */ = {
+			isa = PBXGroup;
+			children = (
+				064F8F3619D5F82200291398 /* GRCheckoutViewController.h */,
+				064F8F3719D5F82200291398 /* GRCheckoutViewController.m */,
+				06CCAB9E19E43C1200D86487 /* Checkout.storyboard */,
+			);
+			name = "Checkout Screen";
 			sourceTree = "<group>";
 		};
 		8788408154A84530999E3076 /* Frameworks */ = {
@@ -417,6 +420,7 @@
 				06CCAB9B19E43BA100D86487 /* MyriadSetPro-thin.ttf in Resources */,
 				0690D63119D33D8B007964A7 /* LaunchScreen.xib in Resources */,
 				06CCAB9719E43BA100D86487 /* MyriadSetPro-bold.ttf in Resources */,
+				06CCAB9F19E43C1200D86487 /* Checkout.storyboard in Resources */,
 				06CCAB9919E43BA100D86487 /* MyriadSetPro-semibold.ttf in Resources */,
 				06CCAB9C19E43BA100D86487 /* MyriadSetPro-ultralight.ttf in Resources */,
 				06CCAB9A19E43BA100D86487 /* MyriadSetPro-text.ttf in Resources */,

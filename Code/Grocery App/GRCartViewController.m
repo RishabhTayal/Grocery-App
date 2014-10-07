@@ -78,7 +78,7 @@
 
 -(void)checkoutClicked:(id)sender
 {
-    GRCheckoutViewController* checkoutVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GRCheckoutViewController"];
+    GRCheckoutViewController* checkoutVC = [[UIStoryboard storyboardWithName:@"Checkout" bundle:nil] instantiateViewControllerWithIdentifier:@"GRCheckoutViewController"];
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:checkoutVC] animated:YES completion:nil];
 }
 

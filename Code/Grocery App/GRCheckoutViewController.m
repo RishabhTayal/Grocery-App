@@ -7,8 +7,14 @@
 //
 
 #import "GRCheckoutViewController.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface GRCheckoutViewController ()
+@interface GRCheckoutViewController ()<ABPeoplePickerNavigationControllerDelegate>
+
+@property (nonatomic, strong) ABPeoplePickerNavigationController *addressBookController;
+
+-(IBAction)importFromContactsClicked:(id)sender;
 
 @end
 
@@ -31,6 +37,14 @@
 -(void)dismissViewController:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)importFromContactsClicked:(id)sender
+{
+    _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
+    [_addressBookController setPeoplePickerDelegate:self];
+    [self presentViewController:_addressBookController animated:YES completion:nil];
+
 }
 
 @end
