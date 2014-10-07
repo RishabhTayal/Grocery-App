@@ -478,8 +478,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d79-vN-NDw" id="RF7-lE-FX7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBl-Ru-ZeN">
-                                                    <rect key="frame" x="97" y="11" width="495" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBl-Ru-ZeN">
+                                                    <rect key="frame" x="97" y="11" width="495" height="19"/>
                                                     <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -500,6 +500,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vBl-Ru-ZeN" firstAttribute="leading" secondItem="RF7-lE-FX7" secondAttribute="leadingMargin" constant="89" id="OvB-my-FOy"/>
+                                                <constraint firstItem="vBl-Ru-ZeN" firstAttribute="trailing" secondItem="RF7-lE-FX7" secondAttribute="trailingMargin" id="Ppo-fa-Ypa"/>
+                                                <constraint firstItem="vBl-Ru-ZeN" firstAttribute="top" secondItem="RF7-lE-FX7" secondAttribute="topMargin" constant="3" id="jMl-fq-HEO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemImageView" destination="CSz-WX-f1T" id="wqx-KG-uh8"/>

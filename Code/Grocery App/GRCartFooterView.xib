@@ -4,26 +4,68 @@
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="MyriadSetPro-text.ttf">
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+            <string>MyriadSetPro-Text</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GRCartViewController">
             <connections>
+                <outlet property="shippingPriceLabel" destination="iYp-M4-Zr9" id="SGq-av-eva"/>
+                <outlet property="subTotalPriceLabel" destination="swJ-dG-bII" id="7U1-k6-bMZ"/>
+                <outlet property="taxPriceLabel" destination="qe1-E6-9wx" id="ZZD-FX-pYA"/>
                 <outlet property="totalPriceLabel" destination="20k-bf-eQ9" id="S3m-cK-LU9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="577" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="577" height="110"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95C-Js-0BT">
                     <rect key="frame" x="8" y="10" width="115" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shipping &amp; Tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDD-fQ-p4A">
-                    <rect key="frame" x="8" y="39" width="115" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swJ-dG-bII">
+                    <rect key="frame" x="495" y="10" width="74" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="Gyc-Za-DBg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20k-bf-eQ9">
+                    <rect key="frame" x="471" y="81" width="98" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="98" id="hHT-FL-mqc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shipping" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDD-fQ-p4A">
+                    <rect key="frame" x="8" y="33" width="115" height="21"/>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYp-M4-Zr9">
+                    <rect key="frame" x="514" y="33" width="55" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="Nev-BN-yWc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -33,30 +75,24 @@
                         <constraint firstAttribute="height" constant="4" id="9or-IR-T44"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swJ-dG-bII">
-                    <rect key="frame" x="495" y="10" width="74" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="74" id="Gyc-Za-DBg"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-fM-muo">
+                    <rect key="frame" x="8" y="58" width="115" height="21"/>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20k-bf-eQ9">
-                    <rect key="frame" x="471" y="69" width="98" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qe1-E6-9wx">
+                    <rect key="frame" x="502" y="58" width="67" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="98" id="hHT-FL-mqc"/>
+                        <constraint firstAttribute="width" constant="67" id="m9o-yU-HIF"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYp-M4-Zr9">
-                    <rect key="frame" x="514" y="39" width="55" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="55" id="Nev-BN-yWc"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGg-Zc-36n">
+                    <rect key="frame" x="8" y="81" width="64" height="21"/>
+                    <fontDescription key="fontDescription" name="MyriadSetPro-Text" family="Myriad Set Pro" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -68,7 +104,9 @@
                 <constraint firstAttribute="trailing" secondItem="Q1B-KC-MXm" secondAttribute="trailing" id="GcI-XP-ST5"/>
                 <constraint firstAttribute="centerY" secondItem="iYp-M4-Zr9" secondAttribute="centerY" constant="0.5" id="P45-PQ-wWg"/>
                 <constraint firstAttribute="trailing" secondItem="swJ-dG-bII" secondAttribute="trailing" constant="8" id="Yu1-nB-OMi"/>
+                <constraint firstAttribute="trailing" secondItem="qe1-E6-9wx" secondAttribute="trailing" constant="8" id="aqk-UB-QVx"/>
                 <constraint firstAttribute="bottom" secondItem="20k-bf-eQ9" secondAttribute="bottom" constant="10" id="bbG-wI-itv"/>
+                <constraint firstAttribute="bottom" secondItem="qe1-E6-9wx" secondAttribute="bottom" constant="31" id="cG4-H7-UiS"/>
                 <constraint firstAttribute="trailing" secondItem="20k-bf-eQ9" secondAttribute="trailing" constant="8" id="oPi-XG-Wvv"/>
                 <constraint firstAttribute="trailing" secondItem="iYp-M4-Zr9" secondAttribute="trailing" constant="8" id="t9f-mH-6XK"/>
                 <constraint firstItem="Q1B-KC-MXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vtN-00-JBF"/>
@@ -76,7 +114,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="145.5" y="-63"/>
+            <point key="canvasLocation" x="443.5" y="5"/>
         </view>
     </objects>
     <resources>

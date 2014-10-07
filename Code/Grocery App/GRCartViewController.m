@@ -18,6 +18,10 @@
 @interface GRCartViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView* tableView;
+
+@property (nonatomic, strong) IBOutlet UILabel* subTotalPriceLabel;
+@property (nonatomic, strong) IBOutlet UILabel* shippingPriceLabel;
+@property (nonatomic, strong) IBOutlet UILabel* taxPriceLabel;
 @property (nonatomic, strong) IBOutlet UILabel* totalPriceLabel;
 
 @property (nonatomic, strong) NSMutableArray* datasource;
@@ -35,6 +39,7 @@
     self.tableView.nxEV_hideSeparatorLinesWheyShowingEmptyView = YES;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Checkout" style:UIBarButtonItemStyleBordered target:self action:@selector(checkoutClicked:)];
+
     // Do any additional setup after loading the view.
 }
 
@@ -98,7 +103,11 @@
 //    for (Cart* item in _datasource) {
 //        totalPrice = totalPrice + ([item.price floatValue] * [item.quantity integerValue]);
 //    }
+    self.subTotalPriceLabel.text = self.cartDict[@"subTotal"][@"amount"];
+    self.shippingPriceLabel.text = self.cartDict[@"totalShipping"][@"amount"];
+    self.taxPriceLabel.text = self.cartDict[@"totalTax"][@"amount"];
     _totalPriceLabel.text = self.cartDict[@"total"][@"amount"];
+    
     return footerView;
 }
 
@@ -107,7 +116,7 @@
     if (_datasource.count == 0) {
         return 0;
     }
-    return 100;
+    return 110;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,9 +162,15 @@
 //        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
 //            [((GRTabViewController*)self.tabBarController) cartUpdated];
 //        }];
+        DLog(@"%@", self.datasource[indexPath.row]);
+        GRWebService* caller = [[GRWebService alloc] init];
+        [caller deleteItemFromCart:self.datasource[indexPath.row][@"id"] callBack:^(id result, NSError *error) {
+            DLog(@"%@", result);
+        }];
+        
         
         [_datasource removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
         
         //        [((GRTabViewController*)self.tabBarController) removeFromCart];
         

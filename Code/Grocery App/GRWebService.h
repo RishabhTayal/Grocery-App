@@ -10,6 +10,7 @@
 
 typedef void (^GRCompletionBlockGet)(id result, NSError *error);
 typedef void (^GRCompletionBlockPost)(id result, NSError* error);
+typedef void (^GRCompletionBlockDelete)(id result, NSError* error);
 
 @interface GRWebService : NSObject
 
@@ -21,6 +22,9 @@ typedef void (^GRCompletionBlockPost)(id result, NSError* error);
 -(void)createCartcallBack:(GRCompletionBlockPost)callback;
 -(void)addToCartCategory:(NSString*)category productId:(NSString*)productId skuId:(NSString*)skuId callback:(GRCompletionBlockPost)callback;
 -(void)getCartWithCallback:(GRCompletionBlockGet)callback;
+-(void)deleteItemFromCart:(NSString*)itemId callBack:(GRCompletionBlockDelete)callback;
+
+
 -(void)getMediaListForProduct:(NSString*)productId callback:(GRCompletionBlockGet)callback;
 
 @end

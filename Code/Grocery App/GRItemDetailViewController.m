@@ -78,6 +78,12 @@
     //TODO:Replace with Skuid
     [caller addToCartCategory:self.categoryId productId:self.productDict[@"id"] skuId:self.productDict[@"id"] callback:^(id result, NSError *error) {
         DLog(@"%@", result);
+        if (result[@"httpStatusCode"] != nil) {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not add to cart" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil] show];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Item added to your cart" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+//            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
 }
 

@@ -34,6 +34,8 @@
     [self sendGetRequestURL:urlString httpBody:nil httpHeader:nil completion:callback];
 }
 
+#pragma mark - Cart
+
 -(void)createCartcallBack:(GRCompletionBlockPost)callback
 {
     [self sendPostRequestURL:kWSURLCreateCart httpBody:nil httpHeader:nil completion:callback];
@@ -55,6 +57,13 @@
     Customer* cust = [Customer MR_findFirst];
     NSDictionary* params = @{@"customerId": cust.customerId};
     [self sendGetRequestURL:url httpBody:nil httpHeader:params completion:callback];
+}
+
+-(void)deleteItemFromCart:(NSString*)itemId callBack:(GRCompletionBlockDelete)callback
+{
+    Customer* cust = [Customer MR_findFirst];
+    NSDictionary* dict = @{@"customerId": cust.customerId};
+    [self sendDeleteRequestURL:[NSString stringWithFormat:kWSURLCartDelete, itemId] httpHeader:dict completion:callback];
 }
 
 -(void)getMediaListForProduct:(NSString*)productId callback:(GRCompletionBlockGet)callback
@@ -109,6 +118,25 @@
         id resultJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(resultJSON, connectionError);
+        });
+    }];
+}
+
+-(void)sendDeleteRequestURL:(NSString*)urlString httpHeader:(id)httpHeader completion:(GRCompletionBlockDelete)completion
+{
+    NSURL* url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"DELETE";
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    if (httpHeader) {
+        for (NSString* key in httpHeader) {
+            [request addValue:httpHeader[key] forHTTPHeaderField:key];
+        }
+    }
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        id resultJson = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(resultJson, connectionError);
         });
     }];
 }

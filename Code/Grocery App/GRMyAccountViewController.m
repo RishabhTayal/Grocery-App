@@ -78,6 +78,7 @@
             cell.imageView.image = [UIImage imageNamed:@"account_icn"];
             break;
     }
+    cell.textLabel.font = [UIFont fontWithName:@"MyriadSetPro-text" size:17];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
